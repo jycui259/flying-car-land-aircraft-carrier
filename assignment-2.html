@@ -1,0 +1,1019 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>作业二 · 全方位安全分析：X3-F 的系统安全工程 | 飞行汽车技术基础 2026</title>
+<meta name="description" content="按智能运载工具安全系统工程九步流程，对分体式飞行汽车「陆地航母」飞行体 X3-F 做深度安全分析：FHA、FTA、STPA、风险矩阵、GSN 安全案例与适航审定基础。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23123f5c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 fill=%22%23fff%22 text-anchor=%22middle%22 font-family=%22serif%22%3E%E9%A3%9E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">飞</span>
+      <span>
+        <b>飞行汽车技术基础 · 课程作业</b>
+        <small>Fundamentals of Flying Vehicle Technology · 2026</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="index.html">首页</a>
+      <a href="assignment-1.html">作业一 · 调研与分析</a>
+      <a href="assignment-2.html" aria-current="page">作业二 · 安全分析</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="references.html">参考文献</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+<div class="wrap">
+<div class="layout">
+
+  <aside class="toc" aria-label="本页目录">
+    <h2>目录 / Contents</h2>
+    <ol>
+      <li><a href="#summary">执行摘要</a></li>
+      <li><a href="#basis">安全边界与审定基础</a></li>
+      <li><a href="#step0">步骤 0 · 安全文化与安全管理</a></li>
+      <li><a href="#step1">步骤 1 · 功能与场景定义</a></li>
+      <li><a href="#step2">步骤 2 · 安全分析方法</a></li>
+      <li><a href="#step3">步骤 3 · 系统安全架构</a></li>
+      <li><a href="#step4">步骤 4 · 硬件安全设计</a></li>
+      <li><a href="#step5">步骤 5 · 软件与智能系统</a></li>
+      <li><a href="#step6">步骤 6 · 机械/化学/电气与人因</a></li>
+      <li><a href="#step7">步骤 7 · 安全测试与验证</a></li>
+      <li><a href="#step8">步骤 8 · 运行安全论证</a></li>
+      <li><a href="#fha">专项 A · FHA</a></li>
+      <li><a href="#fta">专项 B · FTA 定量</a></li>
+      <li><a href="#stpa">专项 C · STPA</a></li>
+      <li><a href="#modular">专题 · 分体式特有风险</a></li>
+      <li><a href="#conclusion">结论与建议</a></li>
+      <li><a href="#refs">参考文献</a></li>
+    </ol>
+  </aside>
+
+  <article>
+
+    <section class="hero" style="padding-top:1.2rem">
+      <div class="eyebrow">
+        <span class="dot"></span><span>Assignment 02 · Safety Analysis</span>
+      </div>
+      <h1>一架允许<br><em>摔坏</em>的飞机，<br>怎样才算安全？</h1>
+      <p class="subtitle">
+        X3-F 的审定基础把“可控应急着陆”写成顶层目标：机体损坏可以接受，乘员不得受严重伤害。
+        这改变了安全分析的全部逻辑——不是防止一切故障，而是<strong>保证任何单一故障都不会夺走“可控”二字</strong>。
+      </p>
+      <div class="hero-meta">
+        <span><b>对象</b> X3-F 飞行体 + 陆行体 + 分合/运行系统</span>
+        <span><b>框架</b> 课程九步流程（0–8）+ ARP4754A/4761A</span>
+        <span><b>证据截止</b> 2026-11-23</span>
+      </div>
+    </section>
+
+    <h2 id="summary"><span class="num">01</span>执行摘要<span class="en">Executive summary</span></h2>
+
+    <p class="lead">
+      本文按课程给出的“智能运载工具安全系统工程”九步流程，对 X3-F 做一次可审计的安全分析。
+      结论可以压缩成一句话：<strong>它的安全论证是“用运行包线换安全等级”的典型案例——在 120 m、20 km、昼间目视、营地隔离的边界内，
+      风险可以被控制在轻型运动航空器的量级；一旦越出这个边界，现有证据不足以支撑任何更强的安全声明。</strong>
+    </p>
+
+    <ol class="steps">
+      <li><strong>顶层目标不是“不摔”，而是“摔得住”。</strong>专用条件把“可控应急着陆”定义为：驾驶员能选择着陆方向与区域，
+          着陆时保护乘员免受严重伤害，机体部分损坏可接受。<a href="references.html#r1">[1]</a> 这决定了 FHA 的顶事件应是“丧失可控应急着陆能力”，而不是“任何故障”。</li>
+      <li><strong>审定基础是 LSA 专用条件，不是运输类规则。</strong>没有引用 DO-178C/DO-254，没有 10⁻⁹ 的定量失效概率要求，
+          也没有闪电直接效应、结冰、噪声、水上迫降等条款。这不是缺陷，而是与“私人娱乐、昼间目视、不商业载客”的用途相匹配的<em>有边界的标准</em>。</li>
+      <li><strong>三条不能赌的路径：飞控、电池、折叠锁定。</strong>专用条件对这三者都写了“单点失效不得导致灾难性状态”（X3.1331、X3.951、X3.612）。
+          但飞控的冗余度、电池包数量与拓扑均未公开，因此本文只能按条款倒推应有架构，并把它列为“必须验证的假设”。</li>
+      <li><strong>定量分析显示：风险由“人”主导，而不是由“件”主导。</strong>在合理假设下，顶事件约 10⁻⁴/飞行小时量级，
+          其中飞行员环节贡献超过 90%；把飞控做成双余度只能降低不到 10%。这意味着<strong>培训、包线保护与运行限制的边际安全收益，远高于再增加一套硬件</strong>。</li>
+      <li><strong>分体式带来了四类独有风险。</strong>分离/对接、运输固定、折叠机构、家庭地库充电——它们不在传统航空器的危险清单里，
+          却恰恰是这款产品最容易出问题的地方。安全案例必须为它们单独立章。</li>
+      <li><strong>安全结论是“有条件可接受”。</strong>条件包括：TC 取证、飞控与电池的单点失效证据、折叠锁定互锁、营地隔离与培训体系、飞行数据记录。
+          缺少任何一项，安全案例都只能停在“定性符合、待验证”。</li>
+    </ol>
+
+    <div class="callout quote">
+      <div class="ct">与作业一的关系</div>
+      <p>
+        作业一证明它“只能做体验”，作业二解释“为什么体验模式反而更安全”：<strong>把运行包线收窄，本身就是最有效的安全措施</strong>。
+        反过来说，任何试图把它推向商业载客的努力，都会同时击穿商业模式与安全论证两块地基。
+      </p>
+    </div>
+
+    <h2 id="basis"><span class="num">02</span>安全边界与审定基础<span class="en">Certification basis</span></h2>
+
+    <h3>2.1 审定基础：一份“一事一议”的专用条件</h3>
+    <p>
+      X3-F 按 CCAR-21-R5 申请型号合格证，申请类别为轻型运动航空器（LSA）。由于“电动多旋翼”没有现成适航标准，
+      民航局为其制定专用条件，编号体系为 X3.1–X3.1581，并附 A–E 五个附件（持续适航文件、飞行手册、电动发动机、螺旋桨、动力电池）。<a href="references.html#r1">[1]</a>
+      这套条款的结构基本沿用了轻型航空器的逻辑，但针对电推进、电池、电涵道与折叠机构增加了专门条款。
+    </p>
+
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 2-1　对本分析最关键的条款<span>条款号与内容均引自专用条件（征求意见稿）；“分析含义”为本文解读。</span></caption>
+          <thead><tr><th>条款</th><th>核心要求</th><th>分析含义</th></tr></thead>
+          <tbody>
+            <tr><td class="id">X3.1(c)</td><td>定义“可控应急着陆”：可选择着陆方向与区域，着陆时保护乘员免受严重伤害；部分损坏可接受</td><td>顶层安全目标的官方表述，FHA 顶事件由此定义</td></tr>
+            <tr><td class="id">X3.25 / X3.303</td><td>最大重量按 77 kg/乘员计；安全系数与强度要求</td><td>重量预算与结构裕度的基准</td></tr>
+            <tr><td class="id">X3.49 / X3.51 / X3.65</td><td>悬停、起飞、爬升性能；临界电动发动机失效后仍能安全着陆</td><td>单发失效是“设计工况”，不是“事故”</td></tr>
+            <tr><td class="id">X3.143 / X3.151</td><td>操纵性与机动性；不得要求特殊技巧</td><td>人机界面的安全需求来源</td></tr>
+            <tr><td class="id">X3.561</td><td>应急着陆情况：结构须给乘员避免严重受伤的合理机会</td><td>被动安全的顶层条款</td></tr>
+            <tr><td class="id">X3.612 / X3.729</td><td>桨叶、机臂、起落架的折叠与锁定机构：必须防止飞行中失效</td><td>分体式独有风险的第一道防线</td></tr>
+            <tr><td class="id">X3.785 / X3.807</td><td>座椅、安全带与肩带；应急出口</td><td>约束系统与撤离通道</td></tr>
+            <tr><td class="id">X3.951(d)(e)</td><td>电池管理系统、高压配电：不得由单点失效导致灾难性状态</td><td>能量系统的单点失效准则</td></tr>
+            <tr><td class="id">X3.968</td><td>火灾与电击预防；地面隔离措施不得依赖处理器或软件</td><td>“硬件断开优先于软件断开”的原则</td></tr>
+            <tr><td class="id">X3.1308</td><td>HIRF 保护：失效会妨碍可控应急着陆的系统须满足要求</td><td>电磁环境是安全相关环境</td></tr>
+            <tr><td class="id">X3.1329</td><td>自动驾驶：可超控、可迅速断开、模式须明确指示</td><td>自动化与人因的核心条款</td></tr>
+            <tr><td class="id">X3.1331</td><td>飞控：姿态角/偏航率/过载/速度保护；单点失效不得灾难性；飞行前自检与全程监控</td><td>飞控安全需求的总纲</td></tr>
+            <tr><td class="id">X3.1433</td><td>电涵道：单发失效后提供偏航力矩；叶片 2 倍离心载荷试验</td><td>偏航冗余的专用设计</td></tr>
+            <tr><td class="id">附件 E</td><td>动力电池：热失控、膨胀、爆炸、有毒气体；失效告警与自动断开充电</td><td>电池安全的符合性方法</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>2.2 条款覆盖的缺口：比“有什么”更重要的是“没有什么”</h3>
+    <p>
+      安全分析不能只看条款写了什么，还要看它没写什么。下表列出与同级别/更高级别航空器相比，专用条件<strong>未覆盖</strong>的领域。
+      这些缺口不是“违法”，而是“标准与用途匹配”的结果；但它们构成安全案例中必须显式声明的<em>剩余风险</em>。
+    </p>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 2-2　标准覆盖缺口与应对建议<span>“影响”指对安全论证强度的影响，不是对产品合法性的判断。</span></caption>
+          <thead><tr><th>缺口</th><th>通常由什么覆盖</th><th>对 X3-F 的影响</th><th>本文建议</th></tr></thead>
+          <tbody>
+            <tr><td>软件保证等级</td><td>RTCA DO-178C（机载软件）、DO-254（复杂电子硬件）</td><td>飞控与电池管理软件的开发保证无法按 DAL 评价</td><td>企业自设 DAL B/C 目标并公开审定基础中的软件方法</td></tr>
+            <tr><td>定量失效概率</td><td>CS/CCAR-27/29 的 10⁻⁹（灾难性）等要求</td><td>无法用“概率”论证，只能靠“单点失效准则 + 运行限制”</td><td>明确“单点失效不得灾难性”，并对多点和共因做定性分析</td></tr>
+            <tr><td>闪电直接效应</td><td>CCAR-25/27 的闪电防护条款</td><td>有 HIRF 条款，但无直接雷击条款</td><td>以“昼间目视 + 低空 + 规避雷雨”运行限制补偿</td></tr>
+            <tr><td>结冰</td><td>结冰审定条款（附录 C/D）</td><td>无结冰条件运行要求</td><td>运行手册明确“结冰条件下禁飞”</td></tr>
+            <tr><td>噪声审定</td><td>CCAR-36 等噪声标准</td><td>营地社区噪声无法依标准评价</td><td>以营地选址、时段与实测噪声控制</td></tr>
+            <tr><td>水上迫降 / 应急撤离演示</td><td>ditching 与撤离演示条款</td><td>无水上迫降要求，撤离仅靠出口尺寸</td><td>运行限制避开大面积水域；营地配置救援</td></tr>
+            <tr><td>飞行记录设备</td><td>FDR/CVR 要求（运输类）</td><td>无强制记录设备，事故调查与数据闭环困难</td><td>建议加装轻量化飞行数据记录与云端回传</td></tr>
+            <tr><td>商业载客运行</td><td>CCAR-135/121 与运营合格证（OC）</td><td>预期用途明确“不用于商业载客”</td><td>不得以“体验”名义变相载客运营</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="ct">安全边界的三句话</div>
+      <p>
+        ① <strong>用途即边界</strong>：私人娱乐 + 培训，不商业载客；② <strong>环境即边界</strong>：昼间目视、120 m AGL、20 km；
+        ③ <strong>运行即边界</strong>：营地隔离、持证驾驶、按手册维护。三条中任何一条被突破，专用条件所隐含的安全水平就不再成立。
+      </p>
+    </div>
+
+    <h2 id="step0"><span class="num">03</span>步骤 0 · 安全文化与安全管理<span class="en">Safety management</span></h2>
+
+    <p>
+      课程把“安全文化与安全管理”放在第 0 步，而不是最后一步，是因为它决定了后面八步是否真的被执行。
+      对一家从汽车行业切入航空的企业，这一步的难点不是“写文件”，而是<strong>把汽车行业的迭代节奏，切换到航空行业的证据节奏</strong>。
+    </p>
+
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 3-1　安全管理要素与本文观察<span>企业未公开其安全管理体系（SMS）与设计保证系统（DAS）细节，以下为按行业惯例提出的应有要素。</span></caption>
+          <thead><tr><th>要素</th><th>应有内容</th><th>为什么对这款产品重要</th><th>公开证据</th></tr></thead>
+          <tbody>
+            <tr><td>安全方针</td><td>以“可控应急着陆”为顶层目标；安全优先于性能与交付</td><td>决定资源在“取证”与“交付”之间如何分配</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td>设计保证系统（DAS）</td><td>独立于设计的符合性核查；委任代表（DER）机制</td><td>TC 审查的核心组织能力</td><td><span class="tag c">间接（TC/PC 受理）</span></td></tr>
+            <tr><td>变更管理</td><td>设计、软件、供应商变更的适航影响评估</td><td>折叠机构、电池、OTA 都是高风险变更点</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td>供应商管理</td><td>适航件追溯、PPAP、二供导入验证</td><td>电芯、电推进、飞控来自不同供应链</td><td><span class="tag c">定点公告可部分印证</span></td></tr>
+            <tr><td>安全绩效指标</td><td>每千架次事件率、计划外着陆率、告警准确率、补能异常率</td><td>体验型产品运行频次低，必须靠指标而非事故积累经验</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td>安全文化</td><td>自愿报告、无惩罚上报、事件复盘</td><td>早期用户是“试飞员”，反馈渠道决定改进速度</td><td><span class="tag no">未公开</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <p>
+      这里有一个结构性风险：<strong>产品以“消费电子”的节奏交付，但安全证据必须以“航空”的节奏积累</strong>。
+      汽车可以靠 OTA 修复缺陷，航空器的每一次软件变更都可能触发适航影响评估。若企业把 OTA 当作主要修复手段，
+      就会出现“运行中的版本”与“审定过的版本”不一致的问题——这是本文建议重点关注的管理风险。
+    </p>
+
+    <h2 id="step1"><span class="num">04</span>步骤 1 · 功能与场景定义<span class="en">Functions &amp; scenarios</span></h2>
+
+    <h3>4.1 任务剖面：一次飞行有七个阶段，风险分布极不均匀</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 4-1　任务剖面与风险暴露<span>时间与高度为典型值（本文设定），用于分配分析资源，不是官方数据。</span></caption>
+          <thead><tr><th>阶段</th><th>典型时长</th><th>关键动作</th><th>主要风险</th><th class="num">暴露权重</th></tr></thead>
+          <tbody>
+            <tr><td>① 地面运输</td><td>数十分钟–数小时</td><td>飞行体固定于后备舱；道路行驶</td><td>固定失效、追尾、电池受撞</td><td class="num">中</td></tr>
+            <tr><td>② 分离与展开</td><td>≈ 5 min</td><td>自动分离、机臂展开、橇架撑起、自检</td><td>夹伤、展开未锁定、自检漏检</td><td class="num">高</td></tr>
+            <tr><td>③ 起飞</td><td>&lt; 1 min</td><td>垂直爬升、姿态建立</td><td>非预期升力、地面人员、阵风</td><td class="num">高</td></tr>
+            <tr><td>④ 巡航（20 min 内）</td><td>10–18 min</td><td>目视飞行、高度保持、避障</td><td>空间定向障碍、障碍物、电量管理</td><td class="num">中</td></tr>
+            <tr><td>⑤ 进近与着陆</td><td>1–3 min</td><td>下降、悬停、接地</td><td>下沉率大、地面效应、侧风</td><td class="num">高</td></tr>
+            <tr><td>⑥ 收纳与结合</td><td>≈ 5 min</td><td>折叠、对接、锁止、充电</td><td>对接失败、夹伤、充电异常</td><td class="num">高</td></tr>
+            <tr><td>⑦ 停放与充电</td><td>数小时</td><td>地库/营地停放、补能</td><td>热失控、有害气体、儿童误入</td><td class="num">低但后果重</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tnote">暴露权重不是事故概率，而是“分析资源应投向哪里”。七个阶段中有四个是地面阶段——这与传统航空器“以空中为主体”的分析习惯不同，也是分体式的特点。</div>
+    </div>
+
+    <h3>4.2 功能清单与失效后果</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 4-2　整机功能分解（节选 12 项）<span>“功能失效后果”按最严酷飞行阶段描述，用于 FHA 输入。</span></caption>
+          <thead><tr><th>编号</th><th>功能</th><th>子功能</th><th>功能失效后果</th></tr></thead>
+          <tbody>
+            <tr><td class="id">F1</td><td>产生升力</td><td>6 路电推进提供总推力</td><td>升力不足 → 不可控下降</td></tr>
+            <tr><td class="id">F2</td><td>姿态控制</td><td>差动转速产生三轴力矩</td><td>姿态失控 → 翻转/坠落</td></tr>
+            <tr><td class="id">F3</td><td>偏航控制</td><td>电涵道在主旋翼失效后提供偏航力矩</td><td>偏航不可控 → 无法对准迫降方向</td></tr>
+            <tr><td class="id">F4</td><td>能量供给</td><td>电池 + 高压配电 + BMS</td><td>动力丧失 / 热失控 / 起火</td></tr>
+            <tr><td class="id">F5</td><td>飞行控制</td><td>电传操纵、保护功能、自检与监控</td><td>错误指令 / 保护失效 → 不可控</td></tr>
+            <tr><td class="id">F6</td><td>状态感知</td><td>IMU、气压高度、GNSS、磁罗盘</td><td>错误姿态/高度 → 空间定向障碍</td></tr>
+            <tr><td class="id">F7</td><td>结构承载</td><td>机身、机臂、接头、起落架</td><td>结构失效 → 空中解体</td></tr>
+            <tr><td class="id">F8</td><td>折叠与锁定</td><td>机臂/桨叶/橇架折叠与锁定</td><td>空中解锁 → 失控</td></tr>
+            <tr><td class="id">F9</td><td>分合与固定</td><td>分离、对接、锁止、运输固定</td><td>空中分离 / 运输中松脱</td></tr>
+            <tr><td class="id">F10</td><td>乘员保护</td><td>座椅、安全带、应急出口、吸能</td><td>应急着陆时乘员受伤</td></tr>
+            <tr><td class="id">F11</td><td>告警与显示</td><td>电量、转速、模式、保护门限</td><td>信息缺失 → 误判/误操作</td></tr>
+            <tr><td class="id">F12</td><td>充电与补能</td><td>陆行体充电、地面充电、隔离</td><td>过充/电弧/热失控</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>4.3 运行设计条件（ODC）：安全论证的“适用域”</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 4-3　建议的运行设计条件<span>前四行来自专用条件（A 级）；其余为本文建议的运行限制（需由运行手册确认）。</span></caption>
+          <thead><tr><th>维度</th><th>限制</th><th>来源</th><th>越界后果</th></tr></thead>
+          <tbody>
+            <tr><td>时间</td><td>仅昼间</td><td><span class="tag a">专用条件</span></td><td>目视避障能力丧失，碰撞风险陡增</td></tr>
+            <tr><td>气象</td><td>目视气象条件（VMC）</td><td><span class="tag a">专用条件</span></td><td>空间定向障碍、无法保持间隔</td></tr>
+            <tr><td>高度</td><td>≤ 120 m AGL</td><td><span class="tag a">专用条件</span></td><td>进入其他空域用户活动层</td></tr>
+            <tr><td>距离/能量</td><td>航程 ≤ 20 km、航时 ≤ 20 min</td><td><span class="tag a">专用条件</span></td><td>电量耗尽迫降</td></tr>
+            <tr><td>风</td><td>建议地面风 ≤ 6 m/s、无强阵风/下洗</td><td><span class="tag d">建议</span></td><td>姿态余量不足、着陆偏差</td></tr>
+            <tr><td>能见度</td><td>建议 ≥ 5 km、云底高 ≥ 300 m</td><td><span class="tag d">建议</span></td><td>避障与迫降场选择困难</td></tr>
+            <tr><td>温度</td><td>建议 0–40 ℃（电池性能边界）</td><td><span class="tag d">建议</span></td><td>低温掉电、高温限功率</td></tr>
+            <tr><td>场地</td><td>营地/起降点，设置隔离区与净空</td><td><span class="tag d">建议</span></td><td>地面人员进入旋翼区</td></tr>
+            <tr><td>人员</td><td>持证驾驶员 + 地面安全员</td><td><span class="tag d">建议</span></td><td>误操作、旁观者干扰</td></tr>
+            <tr><td>维护</td><td>按持续适航文件执行航前/航后检查</td><td><span class="tag a">专用条件</span></td><td>带病飞行、折叠锁定失效</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 id="step2"><span class="num">05</span>步骤 2 · 安全分析方法<span class="en">Methods</span></h2>
+
+    <figure>
+      <div class="frame"><img src="assets/img/fig-vmodel.svg" alt="九步安全系统工程与 V 模型映射：0 安全文化贯穿，左侧 1-6 为定义与设计，底部系统集成，右侧 7-8 为验证与运行论证"></div>
+      <figcaption><b>图 5-1</b>　课程给出的九步流程与 V 模型的对应。左侧回答“是否做对”，右侧回答“是否做对了产品”；中间的“符合性证据与安全案例”是两侧的汇合点。</figcaption>
+    </figure>
+
+    <h3>5.1 方法选择：每种方法只回答一类问题</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 5-1　方法矩阵<span>“本文用途”列说明该方法在本分析中的具体产出，避免“方法堆砌”。</span></caption>
+          <thead><tr><th>方法</th><th>回答的问题</th><th>输出</th><th>本文用途</th></tr></thead>
+          <tbody>
+            <tr><td>FHA</td><td>哪些功能失效会危及安全？严重度多高？</td><td>失效条件清单、严重度分类、安全需求</td><td>专项 A，12 条失效条件</td></tr>
+            <tr><td>PSSA</td><td>架构能否满足 FHA 提出的安全需求？</td><td>架构安全需求、冗余与独立性要求</td><td>§6 架构分析</td></tr>
+            <tr><td>SSA</td><td>实现后的系统是否真的满足？</td><td>符合性证据、剩余风险</td><td>§10–11 验证与论证</td></tr>
+            <tr><td>FTA</td><td>顶事件由哪些组合导致？概率量级？</td><td>割集、概率、敏感性</td><td>专项 B，定量</td></tr>
+            <tr><td>FMEA</td><td>单个部件失效的模式与影响？</td><td>失效模式表、检测手段</td><td>§7 硬件分析</td></tr>
+            <tr><td>CCA / ZSA</td><td>是否存在共因/区域失效？</td><td>共因清单、隔离要求</td><td>§6.3 共因分析</td></tr>
+            <tr><td>STPA</td><td>控制回路是否会产生不安全控制动作？</td><td>UCA、丢失约束、安全需求</td><td>专项 C，10 条 UCA</td></tr>
+            <tr><td>HARA（汽车侧）</td><td>地面行驶与充电的汽车安全等级？</td><td>ASIL 等级、安全目标</td><td>§9 地面场景</td></tr>
+            <tr><td>TARA</td><td>网络攻击路径与影响？</td><td>威胁场景、措施</td><td>§8.3</td></tr>
+            <tr><td>GSN</td><td>证据是否足以支撑安全声明？</td><td>目标—策略—证据结构</td><td>§11 安全案例</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>5.2 标准矩阵：三套体系同时适用</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 5-2　适用标准与本案例的角色<span>“强制”指审定基础直接引用；“参考”指行业最佳实践，不构成审定要求。</span></caption>
+          <thead><tr><th>标准</th><th>领域</th><th>在本案例中的角色</th><th>强度</th></tr></thead>
+          <tbody>
+            <tr><td>CCAR-21-R5 + X3 专用条件</td><td>适航审定</td><td>唯一的强制审定基础</td><td><span class="tag a">强制</span></td></tr>
+            <tr><td>SAE ARP4754A / 4761A</td><td>系统开发与安全评估</td><td>FHA/PSSA/SSA/FTA/CCA 的方法来源</td><td><span class="tag b">参考（行业惯例）</span></td></tr>
+            <tr><td>RTCA DO-178C / DO-254</td><td>机载软件/复杂电子硬件</td><td>专用条件未引用；建议作为自设保证目标</td><td><span class="tag c">参考</span></td></tr>
+            <tr><td>RTCA DO-160G</td><td>机载设备环境条件</td><td>温度、振动、湿度、EMC 试验依据</td><td><span class="tag b">参考</span></td></tr>
+            <tr><td>ISO 26262:2018</td><td>道路车辆功能安全</td><td>陆行体、充电与地面系统的 E/E 安全</td><td><span class="tag b">参考（汽车侧）</span></td></tr>
+            <tr><td>ISO 21448:2022</td><td>预期功能安全（SOTIF）</td><td>性能局限与合理误用（阵风、目视、模式混淆）</td><td><span class="tag b">参考</span></td></tr>
+            <tr><td>ISO/SAE 21434:2021</td><td>网络安全</td><td>固件、数据链、充电通信的 TARA</td><td><span class="tag b">参考</span></td></tr>
+            <tr><td>EASA SC-VTOL-01</td><td>eVTOL 专用条件</td><td>对照“更高安全等级”的要求，识别差距</td><td><span class="tag c">对照</span></td></tr>
+            <tr><td>ASTM F2506-22</td><td>轻型运动航空器螺旋桨</td><td>专用条件 X3.905 直接引用</td><td><span class="tag a">强制（引用）</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout insight">
+      <div class="ct">方法上的一个判断</div>
+      <p>
+        对这款产品，<strong>FTA 的边际价值低于 STPA</strong>。原因很简单：它的主要风险不是“某个部件坏了”，而是“人在一个受限包线里做了错误决策”、
+        “两个本应独立的系统共享了同一个电源/传感器”、“折叠机构在地面反复使用后间隙变大”。这些都属于控制回路与系统交互问题，
+        正是 STPA 的强项。因此本文把 STPA 放在与 FTA 同等的位置，而不是附庸。
+      </p>
+    </div>
+
+    <h2 id="step3"><span class="num">06</span>步骤 3 · 系统安全架构<span class="en">Safety architecture</span></h2>
+
+    <figure>
+      <div class="frame"><img src="assets/img/fig-safety-arch.svg" alt="X3-F 安全架构分层：L4 运行与人员、L3 乘员与结构、L2 控制与感知、L1 能量与推进，标注单点失效与冗余要求"></div>
+      <figcaption><b>图 6-1</b>　四层安全架构。越往下越“硬”（结构、能量），越往上越“软”（程序、人员）。安全设计的顺序应是：先用运行包线消除风险，再用架构隔离风险，最后才用程序兜底。</figcaption>
+    </figure>
+
+    <h3>6.1 冗余策略：需要证明的是“单点不致命”</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 6-1　关键功能的冗余要求与现状判断<span>“现状”依据公开信息推断；“必须验证”列是本文建议的符合性证据。</span></caption>
+          <thead><tr><th>功能</th><th>单点失效后果</th><th>应有架构</th><th>现状判断</th><th>必须验证</th></tr></thead>
+          <tbody>
+            <tr><td>升力（6 路推进）</td><td>单发失效 → 推力不对称</td><td>≥ 6 路独立；单发失效后可继续可控飞行</td><td><span class="tag ok">满足</span>（6 路，专用条件按“临界发动机失效”设计）</td><td>单发失效试飞与着陆距离</td></tr>
+            <tr><td>偏航</td><td>偏航不可控 → 无法对准迫降方向</td><td>电涵道独立备份</td><td><span class="tag ok">有专门设计</span>（X3.1433）</td><td>单发失效后偏航力矩实测</td></tr>
+            <tr><td>飞控</td><td>失控 → 灾难性</td><td>双余度或异构冗余 + 监控</td><td><span class="tag no">未公开</span>（若单通道则不满足 X3.1331(c)）</td><td>架构图、单点失效分析、故障注入</td></tr>
+            <tr><td>姿态传感</td><td>错误姿态 → 空间定向障碍</td><td>多余度 + 交叉校验</td><td><span class="tag c">推断为多余度</span></td><td>传感器配置、故障隔离逻辑</td></tr>
+            <tr><td>能量（电池）</td><td>热失控 / 失电</td><td>包级隔离、熔断、手动断开</td><td><span class="tag c">未公开包数</span>（X3.951 要求单点不灾难）</td><td>包拓扑、隔离试验、滥用试验</td></tr>
+            <tr><td>折叠锁定</td><td>空中解锁 → 失控</td><td>机械锁 + 到位检测 + 飞行互锁</td><td><span class="tag c">条款要求明确</span>（X3.612/729）</td><td>锁定指示、误锁检测、循环试验</td></tr>
+            <tr><td>分合机构</td><td>空中分离 / 地面夹伤</td><td>状态机 + 空中禁止解锁 + 双人确认</td><td><span class="tag c">条款未单列</span>（需自行定义）</td><td>互锁逻辑、失效注入</td></tr>
+            <tr><td>告警</td><td>信息缺失 → 误判</td><td>独立告警通道 + 明确优先级</td><td><span class="tag b">条款要求</span>（X3.1303/1331）</td><td>告警优先级与误报率</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tnote">“未公开”不是“不存在”。本文的处理原则是：凡条款要求“单点失效不得灾难性”而架构未公开的，一律列为<strong>待验证假设</strong>，并在安全案例中显式标注。</div>
+    </div>
+
+    <h3>6.2 典型安全架构模式的映射</h3>
+    <p>
+      课程列出了 1oo1、1oo2、2oo2、1oo3、2oo3、1oo2D 等典型架构。把它们映射到 X3-F 的关键功能，可以看出哪些地方“必须冗余”、哪些地方“冗余不划算”：
+    </p>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 6-2　架构模式与功能匹配</caption>
+          <thead><tr><th>功能</th><th>建议模式</th><th>理由</th><th>代价</th></tr></thead>
+          <tbody>
+            <tr><td>飞控计算</td><td>2oo2（或 1oo2D）</td><td>单点失效必须可探测并切换；两套独立计算可交叉比对</td><td>重量、功耗、软件复杂度</td></tr>
+            <tr><td>姿态传感</td><td>2oo3</td><td>三套传感器可表决，避免单点错误姿态</td><td>成本与安装空间</td></tr>
+            <tr><td>电推进</td><td>6 路并联（降级运行）</td><td>单发失效后仍有 5 路，可继续可控飞行</td><td>已在构型中实现</td></tr>
+            <tr><td>电池</td><td>双包隔离（1oo2 思路）</td><td>单包热失控时另一包仍可供电迫降</td><td>重量与 BMS 复杂度</td></tr>
+            <tr><td>折叠锁定</td><td>机械锁 + 电气指示（1oo1 + 监控）</td><td>锁定是机械事件，靠“检测 + 互锁”而非冗余</td><td>需高可靠到位传感器</td></tr>
+            <tr><td>告警</td><td>独立通道（1oo1 + 自检）</td><td>主通道失效时仍能告警</td><td>布线重量</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>6.3 共因与区域分析（CCA/ZSA）</h3>
+    <p>
+      “两套”不等于“独立”。如果两套飞控共用同一电源、同一传感器或同一连接器，它们会在同一个故障下同时失效。
+      对 X3-F，最需要警惕的共因有四类：
+    </p>
+    <ul class="clean">
+      <li><strong>电源共因</strong>：飞控、电调、电涵道若共用一条高压母线，母线短路会同时夺走控制与推力。</li>
+      <li><strong>传感器共因</strong>：IMU 与气压高度若安装在同一区域，局部结构变形或进水会同时污染两者。</li>
+      <li><strong>环境共因</strong>：HIRF、静电放电、雷击感应会同时影响未屏蔽的多个电子系统。</li>
+      <li><strong>软件共因</strong>：同一套飞控软件的两个通道，若共用同一份代码与同一个编译器，则“双通道”对软件错误无效。</li>
+    </ul>
+    <p>
+      这也是为什么“双余度”必须配合<strong>异构</strong>（不同供应商/不同算法/不同编译器）才有意义。专用条件没有强制要求异构，
+      但 X3.1331(d) 要求“减缓措施避免因飞控集成部件故障导致部件之间产生的交互影响”，这实际上已经在要求做共因分析。
+    </p>
+
+    <div class="callout warn">
+      <div class="ct">架构层面的最大不确定性</div>
+      <p>
+        如果飞控是单通道，那么 X3.1331(c)“单点失效不得导致灾难性状态”只能通过“单点失效概率极低”来论证，
+        而这在 LSA 体系下缺乏定量标准，最终会变成“定性可信但不可证”。这是本文认为最需要企业公开的一项证据——
+        它比任何性能参数都更能决定这款产品能否走向更大的运行包线。
+      </p>
+    </div>
+    <h2 id="step4"><span class="num">07</span>步骤 4 · 硬件安全设计<span class="en">Hardware</span></h2>
+
+    <p>
+      硬件层的安全设计有一个原则：<strong>能用物理隔离解决的，不要用软件解决</strong>。专用条件在 X3.968 里写得很直白——
+      地面断开动力电池的措施“不应依赖任何处理器或软件动作”。这条要求的背后是航空安全的一条经验：软件会死机，继电器不会。
+    </p>
+
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 7-1　关键硬件的失效模式与缓解（FMEA 摘要）<span>“检测”指运行中可被发现的手段；“验证”指符合性证据。</span></caption>
+          <thead><tr><th>部件</th><th>失效模式</th><th>影响</th><th>缓解措施</th><th>检测 / 验证</th></tr></thead>
+          <tbody>
+            <tr><td>动力电池（高硅高镍，25C）</td><td>内短路 → 热失控</td><td>起火、失电、结构损伤</td><td>包级隔离、泄压定向、隔热、熔断、手动断开</td><td>滥用试验（针刺/过充/热箱）、温度与电压监控</td></tr>
+            <tr><td>BMS</td><td>过流/过温未切断</td><td>热失控、功率丧失</td><td>独立硬件保护、双路采样、故障降级</td><td>故障注入、单点失效分析（X3.951(d)）</td></tr>
+            <tr><td>高压配电</td><td>母线短路 / 接触器粘连</td><td>全部动力丧失、电弧</td><td>熔断、预充、双通道、绝缘监测</td><td>短路试验、粘连检测</td></tr>
+            <tr><td>电动发动机 / 电调</td><td>堵转、退磁、功率管击穿</td><td>单路推力丧失</td><td>6 路独立、单发失效后降级飞行</td><td>单发失效试飞（X3.49/51/65）</td></tr>
+            <tr><td>定距桨</td><td>桨叶裂纹、动平衡破坏</td><td>振动、推力丧失</td><td>疲劳寿命限制、定期检查、2 倍离心载荷试验</td><td>桨叶试验、振动监控（X3.251）</td></tr>
+            <tr><td>电涵道</td><td>叶片失效、卡滞</td><td>偏航备份丧失</td><td>2 倍离心载荷设计、状态指示</td><td>X3.1433 旋转/静拉试验</td></tr>
+            <tr><td>折叠锁定机构</td><td>未锁到位 / 空中解锁 / 间隙增大</td><td>机臂摆动、失控</td><td>机械锁 + 到位检测 + 飞行互锁 + 防误操作</td><td>循环试验、误锁检测、X3.612/729</td></tr>
+            <tr><td>起落架（四点橇式）</td><td>落震吸能不足、折断</td><td>着陆冲击传给乘员</td><td>吸能设计、储备能量试验</td><td>落震试验（X3.723–727）</td></tr>
+            <tr><td>结构/接头</td><td>疲劳裂纹、颤振</td><td>空中解体</td><td>疲劳寿命、刚度与颤振分析、检查大纲</td><td>静力/疲劳试验（X3.571/629）</td></tr>
+            <tr><td>座椅与安全带</td><td>约束失效、二次碰撞</td><td>应急着陆乘员重伤</td><td>四点式安全带、刚性件包裹、按 77 kg 设计</td><td>静强度试验（X3.561/785）</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>7.1 电池：最重的部件，也是最难论证的部件</h3>
+    <p>
+      电池在 X3-F 上有三重身份：<strong>能量源、重量大头、火灾风险源</strong>。专用条件对它的要求集中在附件 E：
+      必须明确失效模式（热失控、膨胀、爆炸、有毒物质排放），必须有失效敏感与告警系统，必须能在失效时自动断开充电电源。<a href="references.html#r1">[1]</a>
+      而 X3.951 进一步要求 BMS 与高压配电“不得由单点失效导致灾难性状态”。
+    </p>
+    <p>
+      这三条要求组合起来，实际上强制了一个设计选择：<strong>电池不能是“一个大包”</strong>。如果所有电芯共用一个包、一套 BMS、一条母线，
+      那么任何一个单点故障都可能同时满足“热失控 + 失电 + 起火”三个后果。要让单点失效不致命，必须有包级隔离与独立保护。
+      公开信息没有披露包的数量与拓扑，这是本文反复标注的“待验证假设”。
+    </p>
+
+    <div class="callout insight">
+      <div class="ct">一个容易忽略的细节</div>
+      <p>
+        专用条件要求“25C 峰值放电”——这是为垂直起降的瞬时功率准备的。但高倍率放电会同时带来<strong>发热与内阻压降</strong>，
+        在低电量时尤其明显。这意味着“电量告警”不能只报百分比，还要报“可用功率”。若告警只基于 SOC（荷电状态），
+        飞行员可能在 20% 电量时仍尝试复飞，然后在爬升阶段因功率不足而掉高。这是一个典型的 SOTIF 问题，而不是功能安全问题。
+      </p>
+    </div>
+
+    <h3>7.2 折叠机构：分体式的“阿喀琉斯之踵”</h3>
+    <p>
+      X3.612 要求折叠与锁定机构“安全可靠地完成展开、折叠和锁定”，并“防止锁定机构在飞行中失效”；X3.729 对起落架折叠锁定提出同样要求。
+      这两条看似普通，实则极难：折叠机构既要<strong>轻</strong>（否则吃掉航时），又要<strong>反复使用数万次</strong>（消费品的频次），
+      还要在<strong>振动、温度、沙尘、雨水</strong>下保持锁定可靠。传统航空器的起落架不会每天折叠十次，而这款产品会。
+    </p>
+    <p>
+      因此，折叠机构的安全论证不能只做“静力试验”，必须做<strong>循环寿命 + 磨损 + 误操作</strong>三类试验，并配合“锁定指示 + 飞行互锁”：
+      只要任一锁点未到位，飞控就禁止起飞。这条互锁逻辑应被视为安全关键功能，而不是便利功能。
+    </p>
+
+    <h2 id="step5"><span class="num">08</span>步骤 5 · 软件与智能系统<span class="en">Software &amp; autonomy</span></h2>
+
+    <h3>8.1 飞控：保护功能是“最后一道软件防线”</h3>
+    <p>
+      X3.1331 把飞控的保护功能写得很细：姿态角限制、偏航角变化率限制、法向过载限制、速度限制；每个保护功能的启动必须平滑、
+      与飞行阶段适应；多个保护同时作用时不得产生不利耦合；接近门限时要告警。<a href="references.html#r1">[1]</a>
+      这些要求的本质是：<strong>让一个非专业飞行员也不会把飞机飞出包线</strong>。
+    </p>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 8-1　飞控保护功能的安全含义</caption>
+          <thead><tr><th>保护功能</th><th>防止的危险</th><th>失效后果</th><th>验证要点</th></tr></thead>
+          <tbody>
+            <tr><td>姿态角限制</td><td>大姿态导致升力丧失或翻转</td><td>飞行员可把飞机翻过来</td><td>边界扫描、抗饱和、平滑启动</td></tr>
+            <tr><td>偏航角变化率限制</td><td>尾旋/失控旋转</td><td>定向障碍、无法改出</td><td>阶跃输入响应、速率限幅</td></tr>
+            <tr><td>法向过载限制</td><td>结构超载</td><td>结构损伤/解体</td><td>突风与急操纵组合</td></tr>
+            <tr><td>速度限制</td><td>超过 VNE 72 km/h</td><td>桨叶/结构超载、振动</td><td>俯冲试验、限速优先级</td></tr>
+            <tr><td>保护门限告警</td><td>飞行员不知道已接近边界</td><td>误判余量</td><td>告警时机与误报率</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>8.2 自动化：手动/自动双模式的“模式混淆”风险</h3>
+    <p>
+      X3.1329 要求自动驾驶可被驾驶员超控、可迅速断开、且必须明确指示当前模式（不能只用开关位置指示）。这条要求的现实背景是：
+      在单杆操纵的飞行器上，飞行员很容易搞不清“现在是谁在飞”。当自动模式在低空突然断开，飞行员需要立即接管，
+      而人的反应时间（约 1–3 s）在 120 m 高度、5 m/s 下降率下意味着 5–15 m 的高度损失。
+    </p>
+    <p>
+      因此，自动化的安全需求不是“更智能”，而是<strong>“更可预测”</strong>：模式切换必须有明确告警、有过渡过程、有最低高度限制（低于某高度禁止自动断开）。
+      这与汽车行业 L3 接管的教训完全一致，也是课程把 SOTIF 与 HMI 放在一起讲的原因。<a href="references.html#r16">[16]</a>
+    </p>
+
+    <h3>8.3 SOTIF：没有故障，也会出事</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 8-2　预期功能安全（SOTIF）场景清单<span>这些场景的共同点是：系统“正常工作”，但性能边界或人的误用导致危险。</span></caption>
+          <thead><tr><th>场景</th><th>触发条件</th><th>危险机理</th><th>措施</th></tr></thead>
+          <tbody>
+            <tr><td>地面效应</td><td>低高度悬停/着陆</td><td>升力突变、吸附、侧向力</td><td>着陆包线限制、下降率监控</td></tr>
+            <tr><td>阵风与下洗</td><td>营地周边建筑/树林</td><td>姿态扰动、余量不足</td><td>风速限值、阵风告警、姿态保护</td></tr>
+            <tr><td>目视误判</td><td>逆光、雪地、水面</td><td>高度/距离判断错误</td><td>目视条件限制、高度表辅助</td></tr>
+            <tr><td>单杆操纵混淆</td><td>手动/自动切换</td><td>错误输入、过量修正</td><td>模式指示、操纵逻辑一致性、培训</td></tr>
+            <tr><td>低电量焦虑</td><td>返航决策</td><td>拖延返航、迫降</td><td>可用功率告警、强制返航提示</td></tr>
+            <tr><td>旁观者干扰</td><td>营地人群、拍摄</td><td>飞行员分心、地面人员接近</td><td>隔离区、地面安全员、飞行前简报</td></tr>
+            <tr><td>折叠未锁提示不清</td><td>展开后自检</td><td>带病起飞</td><td>锁定指示、禁止起飞互锁</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>8.4 网络安全：一架会联网的飞机</h3>
+    <p>
+      飞行器与陆行体、营地、云端之间存在数据链路；充电接口、维护接口、OTA 都是潜在攻击面。按 ISO/SAE 21434 的 TARA 思路，
+      至少应覆盖四类资产：<strong>飞控软件与参数、电池管理、分合机构控制、运行数据</strong>。威胁包括未授权固件、参数篡改、拒绝服务、数据泄露。
+    </p>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 8-3　简化 TARA<span>“影响”按飞行安全后果评估；本表为定性梳理，不替代完整 TARA。</span></caption>
+          <thead><tr><th>资产</th><th>威胁场景</th><th>影响</th><th>措施</th></tr></thead>
+          <tbody>
+            <tr><td>飞控软件/参数</td><td>未授权刷写、参数越界</td><td>姿态失控</td><td>签名固件、安全启动、参数完整性校验</td></tr>
+            <tr><td>电池管理</td><td>篡改限流/温度阈值</td><td>热失控</td><td>只读关键阈值、独立硬件保护</td></tr>
+            <tr><td>分合机构</td><td>伪造解锁指令</td><td>地面/空中分离</td><td>指令认证、空中物理互锁</td></tr>
+            <tr><td>数据链</td><td>干扰、欺骗</td><td>失联、错误指令</td><td>跳频/加密、失联保护逻辑</td></tr>
+            <tr><td>运行数据</td><td>泄露用户位置</td><td>隐私与合规</td><td>最小化采集、加密存储</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="ct">软件保证的最大缺口</div>
+      <p>
+        专用条件没有引用 DO-178C，也没有规定软件等级。这不意味着软件不重要，而是意味着<strong>“用什么方法保证软件”被留给了企业自证</strong>。
+        对于一个由电传飞控控制、飞行员只有单杆输入的系统，软件错误的后果是灾难性的。本文建议：按 DAL B（灾难性）自设目标，
+        至少做到需求—设计—代码—测试的双向追溯、独立验证与配置管理，并把这些证据纳入 TC 符合性文件。
+      </p>
+    </div>
+
+    <h2 id="step6"><span class="num">09</span>步骤 6 · 机械/化学/电气与人因<span class="en">Physical &amp; human</span></h2>
+
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 9-1　物理与化学危险源<span>“暴露场景”列用于确定防护措施的作用位置（机上/地面/程序）。</span></caption>
+          <thead><tr><th>危险源</th><th>暴露场景</th><th>后果</th><th>措施</th></tr></thead>
+          <tbody>
+            <tr><td>高压（800 V 级）</td><td>维护、充电、涉水、碰撞</td><td>电击、电弧、火灾</td><td>绝缘监测、互锁、手动隔离、警示标识</td></tr>
+            <tr><td>电池热失控</td><td>飞行、充电、地库停放</td><td>起火、有毒气体</td><td>包级隔离、泄压、温度监控、消防配置</td></tr>
+            <tr><td>桨叶/旋翼</td><td>地面人员接近、登离机</td><td>割伤、致命冲击</td><td>隔离区、桨叶防护、登机顺序</td></tr>
+            <tr><td>折叠/对接机构</td><td>展开、收纳、对接</td><td>夹伤、挤压</td><td>防夹设计、双人确认、急停</td></tr>
+            <tr><td>噪声</td><td>营地周边社区</td><td>扰民、投诉、运行时段受限</td><td>选址、时段、实测噪声、隔声屏障</td></tr>
+            <tr><td>低温/高温</td><td>冬季/夏季户外</td><td>掉电、限功率、材料性能下降</td><td>温度限制、预热/预冷、性能修正</td></tr>
+            <tr><td>沙尘/盐雾/雨水</td><td>营地、沿海</td><td>腐蚀、卡滞、绝缘下降</td><td>防护等级、定期检查、润滑规范</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>9.1 人因：被低估的主导因素</h3>
+    <p>
+      这款产品的飞行员不是航线飞行员，而是“会开车的飞行爱好者”。他们可能一年只飞几十架次，目视飞行，单杆操纵，
+      在 120 m 高度、20 min 的短任务中完成起飞、巡航、着陆。这种“低小时数 + 高自由度 + 低余量”的组合，是人因风险的高发区。
+    </p>
+    <ul class="clean">
+      <li><strong>空间定向障碍</strong>：目视飞行中，地景缺乏参照（水面、雪地、夜间虽被禁止但黄昏仍可能）会导致姿态误判。</li>
+      <li><strong>技能退化</strong>：低频使用意味着应急程序不熟练；而应急窗口只有几十秒。</li>
+      <li><strong>过度自信</strong>：消费品的“开着玩玩”心态与航空的“程序化”要求冲突，容易出现超风速、超载荷、超包线。</li>
+      <li><strong>旁观者效应</strong>：营地场景中，飞行员可能为了“表演”而做出超出训练范围的动作。</li>
+    </ul>
+    <p>
+      对应的安全措施不是“写进手册”，而是<strong>设计上让人难以犯错</strong>：包线保护、低电量强制返航、风速超限禁止起飞、起飞前自检清单电子化、
+      以及“训练时长 + 定期复训”的运行要求。这也是本文在 FTA 中把“人”列为最大贡献项的原因。
+    </p>
+
+    <h2 id="step7"><span class="num">10</span>步骤 7 · 安全测试与验证<span class="en">Verification</span></h2>
+
+    <p>
+      验证的核心不是“做了多少试验”，而是<strong>每条安全需求都有对应的证据</strong>。下表把安全需求、验证方法与证据类型对齐，
+      并标注公开信息中是否可见。
+    </p>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 10-1　安全需求—验证矩阵（节选）<span>“公开证据”列反映截至 2026-11-23 可查到的信息；空白不代表未做，只代表未公开。</span></caption>
+          <thead><tr><th>需求</th><th>安全需求</th><th>验证方法</th><th>证据类型</th><th>公开证据</th></tr></thead>
+          <tbody>
+            <tr><td class="id">SR-01</td><td>单发失效后可继续可控飞行并安全着陆</td><td>试飞 + 性能计算</td><td>试飞报告</td><td><span class="tag c">部分（多机试飞）</span></td></tr>
+            <tr><td class="id">SR-02</td><td>单发失效后偏航可控</td><td>电涵道台架 + 试飞</td><td>试验报告</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-03</td><td>飞控单点失效不导致灾难性状态</td><td>FTA + 故障注入 + HIL</td><td>分析 + 试验</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-04</td><td>电池单点失效不导致灾难性状态</td><td>滥用试验 + 隔离试验</td><td>试验报告</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-05</td><td>折叠锁定空中不解锁</td><td>循环 + 振动 + 误锁注入</td><td>试验报告</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-06</td><td>应急着陆时乘员免受严重伤害</td><td>落震 + 座椅静强度 + 分析</td><td>试验报告</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-07</td><td>保护功能平滑且不耦合</td><td>边界扫描 + 试飞</td><td>试飞报告</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-08</td><td>电量告警后仍可安全飞行与着陆</td><td>耗电试验 + 告警验证</td><td>试飞报告</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-09</td><td>HIRF 环境下功能不受不利影响</td><td>HIRF 试验</td><td>试验报告</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-10</td><td>充电时人员与设备安全</td><td>充电试验 + 故障注入</td><td>试验报告</td><td><span class="tag c">部分（产品交付）</span></td></tr>
+            <tr><td class="id">SR-11</td><td>分合机构空中不可解锁</td><td>互锁逻辑验证 + 失效注入</td><td>分析 + 试验</td><td><span class="tag no">未公开</span></td></tr>
+            <tr><td class="id">SR-12</td><td>模式切换可预测、可超控</td><td>HMI 评估 + 模拟机</td><td>评估报告</td><td><span class="tag no">未公开</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tnote">这张表也是本文对“安全分析能做到什么程度”的自我限定：没有企业数据，只能验证“需求是否合理”，无法验证“符合性是否成立”。</div>
+    </div>
+
+    <h3>10.1 建议的试验清单（按风险排序）</h3>
+    <ol class="steps">
+      <li><strong>电池滥用与隔离试验</strong>：针刺、过充、热箱、外部短路；验证单包失效不蔓延、可断开、可迫降。</li>
+      <li><strong>飞控故障注入（HIL + 铁鸟台）</strong>：传感器漂移/卡死、总线中断、计算通道失效、作动器卡滞。</li>
+      <li><strong>折叠机构循环与误锁试验</strong>：数万次循环后的间隙、磨损、锁止力；人为未锁到位时的互锁响应。</li>
+      <li><strong>单发失效试飞</strong>：悬停、爬升、进近三个阶段的失效响应与着陆轨迹。</li>
+      <li><strong>应急着陆落震</strong>：不同下沉率、不同姿态、不同地面条件下的乘员载荷。</li>
+      <li><strong>环境试验</strong>：高低温、湿度、沙尘、盐雾、振动、EMC/HIRF。</li>
+      <li><strong>运行场景验证</strong>：营地起降、侧风、地面人员接近、补能中断、对接失败。</li>
+    </ol>
+
+    <h2 id="step8"><span class="num">11</span>步骤 8 · 运行安全论证<span class="en">Safety case</span></h2>
+
+    <figure>
+      <div class="frame"><img src="assets/img/fig-gsn.svg" alt="GSN 安全论证结构：顶层目标 G1、策略 S1、子目标 G2-G4、证据 S2-S4，底部标注论证缺口"></div>
+      <figcaption><b>图 11-1</b>　GSN 安全案例骨架。顶层目标被限定在“批准运行包线内”；三条子目标分别对应被动安全、单点失效与运行控制。底部明确写出四个缺口——这正是本文与“企业宣传”的区别。</figcaption>
+    </figure>
+
+    <h3>11.1 风险接受：应该对齐哪个量级？</h3>
+    <p>
+      运输类航空器的灾难性失效概率目标是 10⁻⁹/飞行小时；轻型运动航空器没有这样的定量要求，其实际安全水平大致在 10⁻⁵–10⁻⁴/飞行小时量级。
+      要求一款 200 万元的私人娱乐飞行器达到 10⁻⁹，在重量、成本与技术上都不可行；但用“它是娱乐产品”来回避一切定量论证，同样不可接受。
+      本文的建议是：<strong>以 10⁻⁵/飞行小时为设计目标，以 10⁻⁴ 为不可接受阈值</strong>，并要求逐年改进。
+    </p>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 11-1　建议的风险接受框架<span>“依据”为本文论证，不是监管规定；目的是给设计一个可操作的目标，而不是宣布合规。</span></caption>
+          <thead><tr><th>风险类别</th><th>受影响对象</th><th>建议目标</th><th>依据</th></tr></thead>
+          <tbody>
+            <tr><td>乘员（灾难性）</td><td>机上 2 人</td><td>≤ 10⁻⁵ / 飞行小时</td><td>轻型运动/通用航空的实际水平</td></tr>
+            <tr><td>第三方地面人员</td><td>营地人员、旁观者</td><td>ALARP，且明显低于乘员风险</td><td>非自愿风险应更严格</td></tr>
+            <tr><td>其他空域用户</td><td>无人机、直升机</td><td>依靠隔离空域与程序控制</td><td>低空目视、营地隔离</td></tr>
+            <tr><td>财产损失</td><td>机体、营地设施</td><td>保险可覆盖</td><td>商业可行性约束</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>11.2 运行限制：最便宜、最有效的安全措施</h3>
+    <p>
+      对这款产品，把“能飞的条件”收窄，比增加任何冗余都更有效。原因很直接：<strong>它的大部分风险来自包线边界之外</strong>——
+      超风速、超视距、超电量、超载荷、非持证人员。运行限制把这些边界变成“不可进入”，就把大量事故消灭在发生之前。
+    </p>
+    <ul class="clean">
+      <li><strong>气象门限</strong>：地面风 ≤ 6 m/s、无雷雨、能见度 ≥ 5 km、云底高 ≥ 300 m。</li>
+      <li><strong>场地门限</strong>：营地起降点净空、隔离区半径、消防与救援配置、地面安全员。</li>
+      <li><strong>人员门限</strong>：持证 + 定期复训 + 航前体检/状态自评；禁止乘客操作。</li>
+      <li><strong>维护门限</strong>：航前/航后检查、折叠机构润滑与间隙检查、电池健康度阈值、桨叶寿命件管理。</li>
+      <li><strong>运行门限</strong>：昼间、目视、120 m、20 km、单次 20 min、禁止商业载客。</li>
+    </ul>
+
+    <h3>11.3 应急程序与持续适航</h3>
+    <div class="grid2">
+      <div class="panel">
+        <h4>应急程序（应写入飞行手册）</h4>
+        <ul>
+          <li>单发失效：保持姿态、选择迫降场、以最小下降率进近</li>
+          <li>电量告急：立即返航或就近着陆，禁止复飞</li>
+          <li>电池热失控：尽快着陆、远离人员、切断动力</li>
+          <li>失联/失控：执行预设悬停或降落逻辑</li>
+          <li>地面起火：切断高压、使用专用灭火剂、疏散</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>持续适航（PC 之后才是长跑）</h4>
+        <ul>
+          <li>电池健康度与循环寿命管理，设定更换阈值</li>
+          <li>桨叶、折叠机构、锁点的寿命件与检查大纲</li>
+          <li>软件版本控制与变更评估（OTA 不得绕过适航）</li>
+          <li>事件报告与数据回传，形成运行数据闭环</li>
+          <li>适航指令（AD）与服务通告（SB）的响应机制</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 id="fha"><span class="num">12</span>专项 A · 功能危害分析（FHA）<span class="en">FHA</span></h2>
+
+    <p>
+      FHA 的输入是 §4.2 的功能清单与 §4.3 的运行条件，输出是“失效条件—严重度—安全需求”的三元组。下表给出 13 条关键失效条件。
+      严重度采用航空惯例的四级分类，并在括号中给出对应的研制保证等级（DAL）类比，便于与汽车 ASIL 对照。
+    </p>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 12-1　FHA（严重度：灾难性 / 危险 / 较大 / 轻微）<span>“DAL 类比”仅用于说明严格程度，不是审定结论；LSA 体系并不正式分配 DAL。</span></caption>
+          <thead><tr><th>编号</th><th>功能</th><th>失效条件</th><th>阶段</th><th>后果</th><th>严重度</th><th>安全需求</th></tr></thead>
+          <tbody>
+            <tr><td class="id">FC-01</td><td>升力</td><td>单路推进失效</td><td>全阶段</td><td>推力不对称、姿态扰动</td><td><span class="tag sev-3">较大（DAL C）</span></td><td>SR-01：可继续可控飞行并着陆</td></tr>
+            <tr><td class="id">FC-02</td><td>升力</td><td>同侧两路推进失效</td><td>低空/进近</td><td>滚转不可控、坠落</td><td><span class="tag sev-5">灾难性（DAL A）</span></td><td>SR-02：偏航/滚转补偿 + 推力裕度</td></tr>
+            <tr><td class="id">FC-03</td><td>姿态控制</td><td>飞控输出错误指令</td><td>全阶段</td><td>姿态失控</td><td><span class="tag sev-5">灾难性（DAL A）</span></td><td>SR-03：单点失效隔离 + 监控</td></tr>
+            <tr><td class="id">FC-04</td><td>偏航控制</td><td>偏航力矩丧失</td><td>单发失效后</td><td>无法对准迫降方向</td><td><span class="tag sev-4">危险（DAL B）</span></td><td>SR-02：电涵道备份</td></tr>
+            <tr><td class="id">FC-05</td><td>能量供给</td><td>电池热失控</td><td>飞行/地面</td><td>起火、失电</td><td><span class="tag sev-4">危险（DAL B）</span></td><td>SR-04：包级隔离、告警、迫降</td></tr>
+            <tr><td class="id">FC-06</td><td>能量供给</td><td>高压母线失效</td><td>全阶段</td><td>全部动力丧失</td><td><span class="tag sev-4">危险（DAL B）</span></td><td>SR-04：双通道/熔断/隔离</td></tr>
+            <tr><td class="id">FC-07</td><td>状态感知</td><td>错误姿态/高度信息</td><td>全阶段</td><td>空间定向障碍</td><td><span class="tag sev-5">灾难性（DAL A）</span></td><td>SR-03：传感器表决与告警</td></tr>
+            <tr><td class="id">FC-08</td><td>折叠锁定</td><td>空中解锁</td><td>全阶段</td><td>机臂摆动、失控</td><td><span class="tag sev-5">灾难性（DAL A）</span></td><td>SR-05：机械锁 + 互锁 + 检测</td></tr>
+            <tr><td class="id">FC-09</td><td>分合机构</td><td>空中解锁/分离</td><td>飞行中</td><td>飞行体脱离</td><td><span class="tag sev-5">灾难性（DAL A）</span></td><td>SR-11：空中禁止解锁互锁</td></tr>
+            <tr><td class="id">FC-10</td><td>乘员保护</td><td>应急着陆中约束失效</td><td>着陆</td><td>乘员重伤</td><td><span class="tag sev-3">较大（DAL C）</span></td><td>SR-06：座椅/安全带/吸能</td></tr>
+            <tr><td class="id">FC-11</td><td>能量管理</td><td>电量耗尽</td><td>巡航/进近</td><td>迫降</td><td><span class="tag sev-4">危险（DAL B）</span></td><td>SR-08：告警 + 预留 + 强制返航</td></tr>
+            <tr><td class="id">FC-12</td><td>告警/显示</td><td>关键信息缺失或误导</td><td>全阶段</td><td>误判/误操作</td><td><span class="tag sev-3">较大（DAL C）</span></td><td>SR-07/12：独立告警、模式指示</td></tr>
+            <tr><td class="id">FC-13</td><td>地面运行</td><td>地面人员进入旋翼区</td><td>起降</td><td>第三方伤亡</td><td><span class="tag sev-4">危险（DAL B）</span></td><td>SR-13：隔离区 + 地面安全员</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <figure>
+      <div class="frame"><img src="assets/img/fig-risk.svg" alt="风险矩阵：10 个危害按严重度与可能性定位，H1-H4 位于灾难性行"></div>
+      <figcaption><b>图 12-1</b>　风险矩阵。H1–H4（电池热失控、同侧双推进失效、飞控单点、折叠锁定）落在“灾难性”行，是架构必须消除的路径；H7–H10 主要由运行限制与地面程序控制。</figcaption>
+    </figure>
+
+    <h2 id="fta"><span class="num">13</span>专项 B · 故障树定量分析<span class="en">FTA</span></h2>
+
+    <p>
+      顶事件定义为“丧失可控应急着陆能力并导致乘员严重伤害”。由于没有企业失效数据，本文采用<strong>行业量级假设</strong>（下表），
+      目的不是算出精确概率，而是回答两个问题：<em>哪条路径主导？把资源投在哪里最有效？</em>
+    </p>
+
+    <figure>
+      <div class="frame"><img src="assets/img/fig-fta.svg" alt="故障树：顶事件为空中失控或不可控坠落，下分升力、飞控、能源、结构、人为五类，列出最小割集"></div>
+      <figcaption><b>图 13-1</b>　故障树结构。五个分支全部为“或”门，意味着任一分支成立即触发顶事件；因此安全性取决于“最短的那块板”，而不是平均值。</figcaption>
+    </figure>
+
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 13-1　基本事件失效率假设（每飞行小时）<span>假设值取自同类系统公开研究的量级，仅用于比较贡献度，不可作为符合性证据。</span></caption>
+          <thead><tr><th>事件</th><th>描述</th><th class="num">λ 假设</th><th>依据 / 说明</th></tr></thead>
+          <tbody>
+            <tr><td class="id">E1</td><td>飞控计算通道失效且未被隔离</td><td class="num">2 × 10⁻⁶</td><td>单通道假设；双通道可降至 10⁻⁹ 量级</td></tr>
+            <tr><td class="id">E2</td><td>姿态传感器共因失效</td><td class="num">5 × 10⁻⁷</td><td>未做异构时的保守值</td></tr>
+            <tr><td class="id">E3</td><td>电池热失控并导致失控</td><td class="num">2.5 × 10⁻⁸</td><td>热失控 5×10⁻⁸ × 后果系数 0.5</td></tr>
+            <tr><td class="id">E4</td><td>高压母线短路致全失电</td><td class="num">2 × 10⁻⁷</td><td>10⁻⁶ × 后果系数 0.2</td></tr>
+            <tr><td class="id">E5</td><td>折叠锁定空中解锁</td><td class="num">3 × 10⁻⁷</td><td>机械锁 + 检测后的残余值</td></tr>
+            <tr><td class="id">E6</td><td>同侧双推进失效 + 偏航补偿失效</td><td class="num">≈ 10⁻¹⁶</td><td>两独立事件相乘，可忽略</td></tr>
+            <tr><td class="id">E7</td><td>电量耗尽且告警失效</td><td class="num">10⁻⁶</td><td>含飞行员决策失误</td></tr>
+            <tr><td class="id">E8</td><td>飞行员差错（含定向障碍、超包线）</td><td class="num">9 × 10⁻⁵</td><td>3×10⁻⁵/架次 ÷ (1/3 h)</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 13-2　顶事件概率与贡献度（基准情景）<span>按“或”门相加；事件独立假设。结果只用于排序，不用于绝对风险声明。</span></caption>
+          <thead><tr><th>贡献项</th><th class="num">概率（/飞行小时）</th><th class="num">占比</th><th>解读</th></tr></thead>
+          <tbody>
+            <tr><td>飞行员差错</td><td class="num">9.0 × 10⁻⁵</td><td class="num">≈ 95.6%</td><td>最大单一贡献，且与训练、包线保护强相关</td></tr>
+            <tr><td>飞控单通道失效</td><td class="num">2.0 × 10⁻⁶</td><td class="num">≈ 2.1%</td><td>若为双通道可降两个数量级</td></tr>
+            <tr><td>电量耗尽 + 告警失效</td><td class="num">1.0 × 10⁻⁶</td><td class="num">≈ 1.1%</td><td>与告警设计与返航策略相关</td></tr>
+            <tr><td>姿态传感器共因</td><td class="num">5.0 × 10⁻⁷</td><td class="num">≈ 0.5%</td><td>异构与表决可降低</td></tr>
+            <tr><td>折叠锁定解锁</td><td class="num">3.0 × 10⁻⁷</td><td class="num">≈ 0.3%</td><td>机械可靠性高，但循环磨损是变量</td></tr>
+            <tr><td>高压母线短路</td><td class="num">2.0 × 10⁻⁷</td><td class="num">≈ 0.2%</td><td>熔断与隔离可进一步降低</td></tr>
+            <tr><td>电池热失控</td><td class="num">2.5 × 10⁻⁸</td><td class="num">&lt; 0.1%</td><td>概率低但后果重，不能只看占比</td></tr>
+            <tr><td><strong>合计</strong></td><td class="num"><strong>≈ 9.4 × 10⁻⁵</strong></td><td class="num">100%</td><td>约合每 3 万架次 1 次灾难性事件</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="grid2">
+      <div class="panel">
+        <h4>乐观情景（双通道飞控 + 包线保护 + 严格训练）</h4>
+        <ul>
+          <li>飞行员差错降至 10⁻⁵/h</li>
+          <li>飞控失效降至 10⁻⁹/h</li>
+          <li>合计约 <strong>1.1 × 10⁻⁵/h</strong>，接近通用航空水平</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>悲观情景（单通道 + 低频使用 + 无包线保护）</h4>
+        <ul>
+          <li>飞行员差错升至 3 × 10⁻⁴/h</li>
+          <li>飞控与传感器共因维持不变</li>
+          <li>合计约 <strong>3.1 × 10⁻⁴/h</strong>，明显不可接受</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout insight">
+      <div class="ct">定量分析的三个结论</div>
+      <p>
+        ① <strong>降风险的第一杠杆是人，不是件。</strong>培训、包线保护、风速/电量强制限制的边际收益，远高于再加一套飞控硬件。
+        ② <strong>飞控冗余是“第二杠杆”，但它决定上限。</strong>若飞控为单通道，无论怎么训练，风险都卡在 10⁻⁵ 以上。
+        ③ <strong>“每 3 万架次 1 次”不是可接受结论，而是设计目标。</strong>它要求把飞行员差错压到 10⁻⁶ 量级，这只能靠“让人难以犯错”的设计，而不是“让人更小心”的口号。
+      </p>
+    </div>
+
+    <h2 id="stpa"><span class="num">14</span>专项 C · STPA<span class="en">STPA</span></h2>
+
+    <figure>
+      <div class="frame"><img src="assets/img/fig-stpa.svg" alt="STPA 控制结构图：驾驶员、飞控、电调、电涵道、BMS、分合机构与航空器之间的控制动作与反馈，附四类不安全控制动作说明"></div>
+      <figcaption><b>图 14-1</b>　STPA 控制结构。与 FTA 不同，它把“人”和“程序”也当作控制器：营地管理员、地面安全员、维护人员都是控制回路的一部分。</figcaption>
+    </figure>
+
+    <h3>14.1 损失、危害与安全约束</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 14-1　损失与危害定义</caption>
+          <thead><tr><th>编号</th><th>损失 / 危害</th><th>说明</th></tr></thead>
+          <tbody>
+            <tr><td class="id">L-1</td><td>乘员伤亡</td><td>最高优先级</td></tr>
+            <tr><td class="id">L-2</td><td>地面人员伤亡</td><td>营地场景下的第三方风险</td></tr>
+            <tr><td class="id">L-3</td><td>航空器损毁</td><td>经济损失与声誉</td></tr>
+            <tr><td class="id">L-4</td><td>第三方财产损失</td><td>坠落地面的连带损失</td></tr>
+            <tr><td class="id">H-1</td><td>不可控坠落</td><td>导致 L-1/L-3/L-4</td></tr>
+            <tr><td class="id">H-2</td><td>非预期升力/离地</td><td>地面维护或乘客误操作时</td></tr>
+            <tr><td class="id">H-3</td><td>空中解体 / 部件分离</td><td>折叠、分合、结构失效</td></tr>
+            <tr><td class="id">H-4</td><td>地面火灾 / 电击</td><td>充电、储运、维护</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>14.2 不安全控制动作（UCA）</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 14-2　UCA 清单（10 条）<span>类型：未提供 / 提供不当 / 过早或过晚 / 停止过快或过久。</span></caption>
+          <thead><tr><th>编号</th><th>控制器</th><th>控制动作</th><th>类型</th><th>情境</th><th>损失场景</th></tr></thead>
+          <tbody>
+            <tr><td class="id">UCA-1</td><td>飞行员</td><td>增加总距/转速</td><td>提供不当</td><td>近地悬停、阵风、净空不足</td><td>过度爬升撞障碍或失速</td></tr>
+            <tr><td class="id">UCA-2</td><td>飞控</td><td>姿态保护介入/退出</td><td>停止过快</td><td>接近地面、飞行员持续输入</td><td>保护突然退出导致姿态突变</td></tr>
+            <tr><td class="id">UCA-3</td><td>飞控</td><td>偏航指令</td><td>未提供</td><td>单发失效、电涵道未就绪</td><td>偏航不可控，无法对准迫降方向</td></tr>
+            <tr><td class="id">UCA-4</td><td>电调</td><td>转速输出</td><td>提供不当</td><td>传感器故障、指令冲突</td><td>不对称推力导致滚转</td></tr>
+            <tr><td class="id">UCA-5</td><td>BMS</td><td>放电限流/切断</td><td>过晚</td><td>低电量、高温、内阻上升</td><td>爬升阶段功率不足，迫降</td></tr>
+            <tr><td class="id">UCA-6</td><td>分合机构</td><td>解锁</td><td>过早</td><td>未完全着陆、未停稳</td><td>地面翻倒或空中分离</td></tr>
+            <tr><td class="id">UCA-7</td><td>飞行员/地面人员</td><td>发出分离指令</td><td>提供不当</td><td>人员未撤离、未固定</td><td>夹伤、设备损坏</td></tr>
+            <tr><td class="id">UCA-8</td><td>维护人员</td><td>折叠锁定检查</td><td>未提供</td><td>复飞前、时间压力</td><td>空中解锁</td></tr>
+            <tr><td class="id">UCA-9</td><td>营地管理</td><td>隔离区管控</td><td>未提供</td><td>起降、观众靠近</td><td>地面人员进入旋翼区</td></tr>
+            <tr><td class="id">UCA-10</td><td>空域/飞行员</td><td>冲突避让</td><td>过晚</td><td>目视丢失、其他航空器</td><td>空中相撞</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>14.3 从 UCA 到安全约束</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 14-3　安全约束（SC）与验证方式</caption>
+          <thead><tr><th>编号</th><th>安全约束</th><th>对应 UCA</th><th>验证方式</th></tr></thead>
+          <tbody>
+            <tr><td class="id">SC-1</td><td>近地 5 m 内禁止大幅总距变化，除非进入应急程序</td><td>UCA-1</td><td>飞控限幅 + 试飞</td></tr>
+            <tr><td class="id">SC-2</td><td>保护功能退出必须渐变，且低于 10 m 禁止退出</td><td>UCA-2</td><td>边界扫描 + HIL</td></tr>
+            <tr><td class="id">SC-3</td><td>单发失效后 200 ms 内建立偏航补偿</td><td>UCA-3</td><td>台架 + 试飞</td></tr>
+            <tr><td class="id">SC-4</td><td>转速指令与实际转速偏差超限时隔离该路</td><td>UCA-4</td><td>故障注入</td></tr>
+            <tr><td class="id">SC-5</td><td>电量低于返航阈值时禁止继续远离基地</td><td>UCA-5</td><td>耗电试验</td></tr>
+            <tr><td class="id">SC-6</td><td>空中（高度 &gt; 2 m 或离地状态）物理禁止解锁</td><td>UCA-6</td><td>互锁验证 + 失效注入</td></tr>
+            <tr><td class="id">SC-7</td><td>分离/对接必须双人确认且人员撤离</td><td>UCA-7</td><td>程序演练</td></tr>
+            <tr><td class="id">SC-8</td><td>航前检查清单电子化，未完成禁止上电起飞</td><td>UCA-8</td><td>系统验证</td></tr>
+            <tr><td class="id">SC-9</td><td>起降区隔离半径与地面安全员到位是起飞前提</td><td>UCA-9</td><td>运行审计</td></tr>
+            <tr><td class="id">SC-10</td><td>目视丢失或冲突告警时执行预设避让/悬停</td><td>UCA-10</td><td>场景演练</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h2 id="modular"><span class="num">15</span>专题 · 分体式特有风险<span class="en">Modular-specific risks</span></h2>
+
+    <p>
+      传统航空器的危险清单里没有“后备舱”“自动对接”“地库充电”。这些是分体式产品独有的风险源，也是最容易被“产品宣传”掩盖的部分。
+      它们共同的特点是：<strong>发生在地面，但后果可能在空中</strong>。
+    </p>
+
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 15-1　分体式特有风险与控制<span>“验证”列说明如何证明控制有效，而不是如何宣传。</span></caption>
+          <thead><tr><th>风险</th><th>机理</th><th>后果</th><th>控制措施</th><th>验证</th></tr></thead>
+          <tbody>
+            <tr><td><strong>空中分离/解锁</strong></td><td>互锁失效、电磁干扰、软件错误、机械振动</td><td>飞行体脱离、灾难性</td><td>机械互锁 + 电气互锁 + 空中禁止逻辑 + 状态监控</td><td>失效注入、振动试验、软件验证</td></tr>
+            <tr><td><strong>对接失败</strong></td><td>对准偏差、地面不平、传感器污染</td><td>设备损坏、夹伤、无法运输</td><td>视觉/机械引导、力反馈、失败自动停止、人工接管</td><td>循环对接试验、误对准试验</td></tr>
+            <tr><td><strong>运输固定失效</strong></td><td>急刹车、颠簸、固定点疲劳</td><td>飞行体在舱内移位、结构损伤</td><td>四点固定 + 载荷监测 + 运输前检查</td><td>振动台、制动工况试验</td></tr>
+            <tr><td><strong>折叠机构磨损</strong></td><td>高频循环、沙尘、润滑失效</td><td>间隙增大、锁定力下降、空中解锁</td><td>寿命件管理、间隙检查、润滑规范、磨损告警</td><td>循环寿命试验、拆检</td></tr>
+            <tr><td><strong>地库充电/停放</strong></td><td>密闭空间、热失控、有毒气体、儿童误入</td><td>火灾、中毒、次生灾害</td><td>通风、烟温报警、充电监控、禁止在住宅地库充电（建议）</td><td>热失控试验、气体扩散评估</td></tr>
+            <tr><td><strong>维护界面错位</strong></td><td>汽车 4S 店不具备航空维修能力</td><td>带病运行、记录缺失</td><td>授权维修体系、航材追溯、放行签字</td><td>维修体系审核</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout warn">
+      <div class="ct">最容易被忽略的一条</div>
+      <p>
+        <strong>“地库充电”是这款产品最独特的卖点，也可能是最独特的风险。</strong>把一架 880 kg、装着数十千瓦时高倍率电池的航空器，
+        停放在住宅地下车库并充电，其火灾后果与“一辆电动车自燃”完全不是一个量级：疏散困难、消防难以接近、有毒烟气在密闭空间聚集。
+        本文建议：在产品说明与运行限制中明确“不得在住宅地库充电”，并在营地配置专用充电位与消防设施。这一条不写进手册，安全案例就不完整。
+      </p>
+    </div>
+
+    <h2 id="conclusion"><span class="num">16</span>结论与建议<span class="en">Conclusion</span></h2>
+
+    <h3>16.1 与 EH216-S 的对照：两条不同的安全路线</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 16-1　有人驾驶 vs 无人驾驶的安全策略差异<span>两者都取三证（TC/PC/AC），但安全论证的重心完全不同。</span></caption>
+          <thead><tr><th>维度</th><th>X3-F（有人驾驶，LSA）</th><th>EH216-S（无人驾驶，载人）</th></tr></thead>
+          <tbody>
+            <tr><td>取证状态</td><td>TC/PC 受理，未取证</td><td>TC（2023-10）、AC（2023-12）、PC（2024-03）、OC（2025-03）</td></tr>
+            <tr><td>安全重心</td><td>飞行员 + 包线保护 + 单点失效</td><td>自主飞行 + 冗余 + 地面调度</td></tr>
+            <tr><td>人的角色</td><td>控制回路的一部分，也是最大风险源</td><td>被移出控制回路，风险转移到系统与调度</td></tr>
+            <tr><td>运行场景</td><td>私人娱乐、培训、营地</td><td>空中游览、点对点载人（已获 OC）</td></tr>
+            <tr><td>对本文的启示</td><td>安全投入应优先“让人不犯错”</td><td>安全投入应优先“让系统不犯错”</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <h3>16.2 五条结论</h3>
+    <ol class="steps">
+      <li><strong>安全目标被用途定义。</strong>“可控应急着陆 + 不商业载客 + 昼间目视 + 120 m”共同构成了这套安全论证的适用域；离开它，论证不成立。</li>
+      <li><strong>单点失效准则是最硬的约束。</strong>飞控、电池、折叠锁定三处的“单点不得灾难性”必须由架构保证，不能靠“概率很低”说服审查方。</li>
+      <li><strong>风险由人主导。</strong>定量分析显示飞行员环节贡献约 95%；因此培训、包线保护、强制限制的优先级高于增加冗余。</li>
+      <li><strong>分体式风险被系统性低估。</strong>分离/对接、运输固定、折叠磨损、地库充电，这四类风险不在传统清单里，却最可能出事。</li>
+      <li><strong>证据缺口集中在“未公开”。</strong>飞控冗余、电池拓扑、软件保证等级、试验报告均未公开，导致安全案例只能做到“定性符合、待验证”。</li>
+    </ol>
+
+    <h3>16.3 七条建议（按优先级）</h3>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>表 16-2　建议清单<span>“优先级”按对安全案例完整度的边际贡献排序。</span></caption>
+          <thead><tr><th>优先级</th><th>建议</th><th>解决什么问题</th><th>可验证的完成标志</th></tr></thead>
+          <tbody>
+            <tr><td><span class="tag no">P0</span></td><td>公开飞控冗余架构与单点失效分析</td><td>X3.1331(c) 的符合性无法评价</td><td>TC 符合性文件含 FTA/PSSA 摘要</td></tr>
+            <tr><td><span class="tag no">P0</span></td><td>电池包级隔离与滥用试验报告</td><td>热失控是否蔓延未知</td><td>单包失效不蔓延的试验证据</td></tr>
+            <tr><td><span class="tag no">P0</span></td><td>折叠锁定互锁与循环寿命数据</td><td>空中解锁是灾难性路径</td><td>数万次循环 + 误锁注入试验</td></tr>
+            <tr><td><span class="tag c">P1</span></td><td>把“包线保护”做成不可关闭的硬限制</td><td>飞行员超包线是最大风险源</td><td>保护功能优先级与限幅验证</td></tr>
+            <tr><td><span class="tag c">P1</span></td><td>明确“不得在住宅地库充电”并配置营地专用充电位</td><td>密闭空间热失控后果极重</td><td>手册条款 + 营地消防配置</td></tr>
+            <tr><td><span class="tag b">P2</span></td><td>加装轻量化飞行数据记录与云端回传</td><td>事故调查与数据闭环缺失</td><td>每架次可回溯的飞行数据</td></tr>
+            <tr><td><span class="tag b">P2</span></td><td>建立航空维修授权体系（区别于汽车 4S）</td><td>维护界面错位导致带病运行</td><td>授权维修点 + 放行记录</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="callout ok">
+      <div class="ct">安全结论</div>
+      <p>
+        <strong>有条件可接受。</strong>条件是：TC 取证完成；飞控/电池/折叠锁定的单点失效证据公开并纳入符合性文件；包线保护不可关闭；
+        营地隔离与培训体系落地；地库充电被明确限制；飞行数据可回溯。缺一项，安全案例就少一块基石；
+        缺三项以上，则只能作为“受控演示”运行，而不能作为“用户产品”交付。
+      </p>
+    </div>
+
+    <h2 id="refs"><span class="num">17</span>参考文献<span class="en">References</span></h2>
+    <p class="small">按 GB/T 7714—2015 顺序编码；完整条目与证据说明见 <a href="references.html">参考文献页</a>。</p>
+    <ol class="refs">
+      <li>中国民用航空局. X3-F 型航空器专用条件（征求意见稿）[Z]. 2025-03. <a href="references.html#r1">条目</a></li>
+      <li>中国民用航空局. 民用航空产品和零部件合格审定规定（CCAR-21-R5）[S]. 2024. <a href="references.html#r17">条目</a></li>
+      <li>上海证券报. 小鹏汇天“陆地航母”飞行体专用条件征求意见[N]. 2025-03-19. <a href="references.html#r2">条目</a></li>
+      <li>上海证券报. “陆地航母”新进展：PC 申请获受理[N]. 2025-05-09. <a href="references.html#r4">条目</a></li>
+      <li>凤凰网科技. “陆地航母”交付时间曝光[EB/OL]. 2026-11-06. <a href="references.html#r6">条目</a></li>
+      <li>环球网. 中国向阿联酋交付首架飞行汽车[EB/OL]. 2026-10-21. <a href="references.html#r7">条目</a></li>
+      <li>国际电子商情. 核心零部件定点名单[EB/OL]. 2026-10-21. <a href="references.html#r8">条目</a></li>
+      <li>EHANG. EH216-S 适航审定历程[EB/OL]. <a href="references.html#r10">条目</a></li>
+      <li>SAE International. ARP4754A / ARP4761A：民用飞机与系统开发及安全评估指南[S]. <a href="references.html#r18">条目</a></li>
+      <li>RTCA. DO-178C 机载系统和设备合格审定中的软件考虑[S]. 2011. <a href="references.html#r19">条目</a></li>
+      <li>RTCA. DO-254 机载电子硬件设计保证指南[S]. 2000. <a href="references.html#r20">条目</a></li>
+      <li>ISO. ISO 26262:2018 道路车辆功能安全[S]. <a href="references.html#r21">条目</a></li>
+      <li>ISO. ISO 21448:2022 预期功能安全[S]. <a href="references.html#r22">条目</a></li>
+      <li>ISO/SAE. ISO/SAE 21434:2021 道路车辆网络安全工程[S]. <a href="references.html#r23">条目</a></li>
+      <li>EASA. SC-VTOL-01 垂直起降航空器专用条件[S]. 2019. <a href="references.html#r24">条目</a></li>
+      <li>张玉新. 飞行汽车技术基础：第五章 飞行汽车产业分析及支撑技术[Z]. 吉林大学, 2026. <a href="references.html#r16">条目</a></li>
+    </ol>
+
+    <div class="nextprev">
+      <div class="np">
+        <span>上一章</span>
+        <a href="assignment-1.html">← 作业一 · 全方位调研与分析</a>
+      </div>
+      <div class="np next">
+        <span>参考</span>
+        <a href="references.html">参考文献与 AI 使用记录 →</a>
+      </div>
+    </div>
+
+  </article>
+</div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>飞行汽车技术基础 · 2026</strong><br>
+      作业二：针对飞行汽车某技术/产品的全方位安全分析
+    </div>
+    <div>
+      证据截止 2026-11-23<br>
+      <a href="references.html">参考文献与 AI 使用记录</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
+
+

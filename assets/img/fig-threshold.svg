@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 500" width="100%" role="img" aria-label="航程与载荷：X3-F 与课程实用化门槛及竞品对比">
+<title>航程与载荷：X3-F 与课程实用化门槛及竞品对比</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6d7a"/></marker><marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a9701f"/></marker></defs>
+<rect width="1040" height="500" fill="#fbfaf6"/>
+<text x="240.0" y="86.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="600" text-anchor="end">X3-F（陆地航母飞行体）</text>
+<rect x="258.0" y="74.0" width="682.0" height="24.0" rx="4" fill="#f1ede3" stroke="#f1ede3" stroke-width="1" opacity="1"/>
+<rect x="258.0" y="74.0" width="68.2" height="24.0" rx="4" fill="#123f5c" stroke="#123f5c" stroke-width="1" opacity="1"/>
+<text x="336.2" y="90.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="11.5" fill="#123f5c" font-weight="700" text-anchor="start">20 km</text>
+<text x="240.0" y="104.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="end">审定基础口径（2025-03 征求意见稿）</text>
+<line x1="940.0" y1="68.0" x2="940.0" y2="104.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="240.0" y="154.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="600" text-anchor="end">EH216-S（亿航，已取三证）</text>
+<rect x="258.0" y="142.0" width="682.0" height="24.0" rx="4" fill="#f1ede3" stroke="#f1ede3" stroke-width="1" opacity="1"/>
+<rect x="258.0" y="142.0" width="102.3" height="24.0" rx="4" fill="#2a6d8c" stroke="#2a6d8c" stroke-width="1" opacity="1"/>
+<text x="370.3" y="158.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="11.5" fill="#2a6d8c" font-weight="700" text-anchor="start">30 km</text>
+<text x="240.0" y="172.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="end">企业公开参数</text>
+<line x1="940.0" y1="136.0" x2="940.0" y2="172.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="240.0" y="222.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="600" text-anchor="end">课程实用化门槛</text>
+<rect x="258.0" y="210.0" width="682.0" height="24.0" rx="4" fill="#f1ede3" stroke="#f1ede3" stroke-width="1" opacity="1"/>
+<rect x="258.0" y="210.0" width="341.0" height="24.0" rx="4" fill="#a9701f" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="609.0" y="226.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="11.5" fill="#a9701f" font-weight="700" text-anchor="start">100 km</text>
+<text x="240.0" y="240.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="end">《飞行汽车发展报告 2.0》：航程 ≥ 100 km</text>
+<line x1="940.0" y1="204.0" x2="940.0" y2="240.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="240.0" y="290.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="600" text-anchor="end">Archer Midnight</text>
+<rect x="258.0" y="278.0" width="682.0" height="24.0" rx="4" fill="#f1ede3" stroke="#f1ede3" stroke-width="1" opacity="1"/>
+<rect x="258.0" y="278.0" width="545.6" height="24.0" rx="4" fill="#7d8b96" stroke="#7d8b96" stroke-width="1" opacity="1"/>
+<text x="813.6" y="294.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="11.5" fill="#7d8b96" font-weight="700" text-anchor="start">160 km</text>
+<text x="240.0" y="308.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="end">企业公开参数</text>
+<line x1="940.0" y1="272.0" x2="940.0" y2="308.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 3"/>
+<text x="240.0" y="358.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="600" text-anchor="end">Joby S4</text>
+<rect x="258.0" y="346.0" width="682.0" height="24.0" rx="4" fill="#f1ede3" stroke="#f1ede3" stroke-width="1" opacity="1"/>
+<rect x="258.0" y="346.0" width="549.0" height="24.0" rx="4" fill="#7d8b96" stroke="#7d8b96" stroke-width="1" opacity="1"/>
+<text x="817.0" y="362.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="11.5" fill="#7d8b96" font-weight="700" text-anchor="start">161 km</text>
+<text x="240.0" y="376.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="end">企业公开参数</text>
+<line x1="940.0" y1="340.0" x2="940.0" y2="376.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 3"/>
+<line x1="599.0" y1="54.0" x2="599.0" y2="398.0" stroke="#a9701f" stroke-width="1.4" stroke-dasharray="5 4"/>
+<text x="599.0" y="46.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10" fill="#a9701f" font-weight="700" text-anchor="middle">实用化门槛 100 km</text>
+<rect x="258.0" y="428.0" width="470.0" height="52.0" rx="8" fill="#fffdf6" stroke="#eddfc2" stroke-width="1" opacity="1"/>
+<text x="272.0" y="450.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.6" fill="#2b343d" font-weight="400" text-anchor="start">20 km ≈ 一线城市 20–30 分钟地面车程；单次飞行 20 min。</text>
+<text x="272.0" y="468.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.6" fill="#a9701f" font-weight="600" text-anchor="start">结论：营地即目的地，而不是“从 A 到 B 的交通”。</text>
+<text x="760.0" y="448.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#5f6d7a" font-weight="400" text-anchor="start">载荷门槛 ≥ 100 kg：X3-F 双人 154 kg 达标，</text>
+<text x="760.0" y="466.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#5f6d7a" font-weight="400" text-anchor="start">短板集中在航程与速度，而不是载重。</text>
+</svg>

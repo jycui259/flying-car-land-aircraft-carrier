@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1020 600" width="100%" role="img" aria-label="智能运载工具安全系统工程：九步流程与 V 模型映射">
+<title>智能运载工具安全系统工程：九步流程与 V 模型映射</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6d7a"/></marker><marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a9701f"/></marker></defs>
+<rect width="1020" height="600" fill="#fbfaf6"/>
+<rect x="40.0" y="24.0" width="940.0" height="46.0" rx="8" fill="#f6f1e6" stroke="#e6dcc6" stroke-width="1" opacity="1"/>
+<text x="56.0" y="44.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">0  安全文化与安全管理</text>
+<text x="230.0" y="44.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#5f6d7a" font-weight="400" text-anchor="start">组织与职责 · 变更管理 · 安全绩效 · 方法/工具充分性 · 供应商与追溯</text>
+<text x="56.0" y="62.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#8b979f" font-weight="400" text-anchor="start">贯穿全生命周期：从概念、设计、验证到运行与持续适航</text>
+<rect x="70.0" y="96.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="96.0" cy="125.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="96.0" y="129.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">1</text>
+<text x="118.0" y="120.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">整机功能与场景定义</text>
+<text x="118.0" y="138.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">ConOps · 运行设计条件 ODC · 任务剖面</text>
+<path d="M 235 154 L 235 166" fill="none" stroke="#5f6d7a" stroke-width="1.2" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="70.0" y="166.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="96.0" cy="195.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="96.0" y="199.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">2</text>
+<text x="118.0" y="190.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">安全分析方法</text>
+<text x="118.0" y="208.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">FHA / PSSA / FTA / FMEA / CCA / STPA</text>
+<path d="M 235 224 L 235 236" fill="none" stroke="#5f6d7a" stroke-width="1.2" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="70.0" y="236.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="96.0" cy="265.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="96.0" y="269.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">3</text>
+<text x="118.0" y="260.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">系统安全架构</text>
+<text x="118.0" y="278.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">冗余、隔离、失效降级、1oo2 / 2oo3</text>
+<path d="M 235 294 L 235 306" fill="none" stroke="#5f6d7a" stroke-width="1.2" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="70.0" y="306.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="96.0" cy="335.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="96.0" y="339.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">4</text>
+<text x="118.0" y="330.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">硬件安全设计</text>
+<text x="118.0" y="348.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">电池、电驱、桨叶、折叠锁定、结构</text>
+<path d="M 235 364 L 235 376" fill="none" stroke="#5f6d7a" stroke-width="1.2" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="70.0" y="376.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="96.0" cy="405.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="96.0" y="409.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">5</text>
+<text x="118.0" y="400.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">软件与智能系统</text>
+<text x="118.0" y="418.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">电传飞控、SOTIF、网络安全 TARA</text>
+<path d="M 235 434 L 235 446" fill="none" stroke="#5f6d7a" stroke-width="1.2" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="70.0" y="446.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="96.0" cy="475.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="96.0" y="479.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">6</text>
+<text x="118.0" y="470.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">机械 / 化学 / 电气</text>
+<text x="118.0" y="488.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">高压、热失控、火灾、人因与工效</text>
+<rect x="70.0" y="516.0" width="330.0" height="48.0" rx="24" fill="#fffdf6" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="235.0" y="537.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#6b4512" font-weight="700" text-anchor="middle">系统集成与确认</text>
+<text x="235.0" y="553.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#6b4512" font-weight="400" text-anchor="middle">“是否做对” → “是否做对了产品”</text>
+<path d="M 235 510 L 235 516" fill="none" stroke="#5f6d7a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="660.0" y="516.0" width="330.0" height="48.0" rx="24" fill="#fbfdff" stroke="#d3e0e9" stroke-width="1" opacity="1"/>
+<text x="825.0" y="537.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#123f5c" font-weight="700" text-anchor="middle">符合性证据与安全案例</text>
+<text x="825.0" y="553.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="middle">试验报告 · 分析档案 · 运行记录</text>
+<path d="M 400 540 L 654 540" fill="none" stroke="#5f6d7a" stroke-width="1.4" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="660.0" y="442.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="686.0" cy="471.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="686.0" y="475.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">7</text>
+<text x="708.0" y="466.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">安全测试与验证</text>
+<text x="708.0" y="484.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">部件 / 系统 / 整机 / 场景，失效注入</text>
+<rect x="660.0" y="372.0" width="330.0" height="58.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<circle cx="686.0" cy="401.0" r="13.0" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="686.0" y="405.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="10" fill="#123f5c" font-weight="700" text-anchor="middle">8</text>
+<text x="708.0" y="396.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">运行安全论证</text>
+<text x="708.0" y="414.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="start">GSN、ALARP、持续适航、数据闭环</text>
+<path d="M 825 516 L 825 500" fill="none" stroke="#5f6d7a" stroke-width="1.2" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 825 442 L 825 430" fill="none" stroke="#5f6d7a" stroke-width="1.2" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="512.0" y="236.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" font-weight="600" text-anchor="middle">左侧：自顶向下分解</text>
+<text x="512.0" y="254.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#8b979f" font-weight="400" text-anchor="middle">把顶层安全目标逐层落到</text>
+<text x="512.0" y="270.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#8b979f" font-weight="400" text-anchor="middle">功能、架构、软硬件与运行限制</text>
+<text x="512.0" y="300.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" font-weight="600" text-anchor="middle">右侧：自底向上验证</text>
+<text x="512.0" y="318.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#8b979f" font-weight="400" text-anchor="middle">用试验、分析与运行数据</text>
+<text x="512.0" y="334.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#8b979f" font-weight="400" text-anchor="middle">反向支撑顶层目标</text>
+</svg>

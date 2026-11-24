@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 600" width="100%" role="img" aria-label="竞品定位：航程与道路行驶能力">
+<title>竞品定位：航程与道路行驶能力</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6d7a"/></marker><marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a9701f"/></marker></defs>
+<rect width="980" height="600" fill="#fbfaf6"/>
+<line x1="140.0" y1="60.0" x2="140.0" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="140.0" y="522.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="9.5" fill="#8b979f" font-weight="400" text-anchor="middle">10</text>
+<line x1="294.9" y1="60.0" x2="294.9" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="294.9" y="522.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="9.5" fill="#8b979f" font-weight="400" text-anchor="middle">20</text>
+<line x1="385.5" y1="60.0" x2="385.5" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="385.5" y="522.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="9.5" fill="#8b979f" font-weight="400" text-anchor="middle">30</text>
+<line x1="499.6" y1="60.0" x2="499.6" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="499.6" y="522.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="9.5" fill="#8b979f" font-weight="400" text-anchor="middle">50</text>
+<line x1="654.5" y1="60.0" x2="654.5" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="654.5" y="522.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="9.5" fill="#8b979f" font-weight="400" text-anchor="middle">100</text>
+<line x1="809.4" y1="60.0" x2="809.4" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="809.4" y="522.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="9.5" fill="#8b979f" font-weight="400" text-anchor="middle">200</text>
+<line x1="900.0" y1="60.0" x2="900.0" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="900.0" y="522.0" font-family="Consolas,'Cascadia Mono',monospace" font-size="9.5" fill="#8b979f" font-weight="400" text-anchor="middle">300</text>
+<line x1="140.0" y1="500.0" x2="900.0" y2="500.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="126.0" y="504.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="end">纯飞 / 需专用起降</text>
+<line x1="140.0" y1="353.3" x2="900.0" y2="353.3" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="126.0" y="357.3" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="end">可收纳 / 可拖运</text>
+<line x1="140.0" y1="206.7" x2="900.0" y2="206.7" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="126.0" y="210.7" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="end">分体式：可驾驶 + 可飞</text>
+<line x1="140.0" y1="60.0" x2="900.0" y2="60.0" stroke="#d9d2c4" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="126.0" y="64.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#5f6d7a" font-weight="400" text-anchor="end">一体式：陆空两栖</text>
+<text x="520.0" y="548.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#5f6d7a" font-weight="600" text-anchor="middle">航程（km，对数刻度；企业口径或审定口径）</text>
+<text transform="translate(34,280) rotate(-90)" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#5f6d7a" font-weight="600" text-anchor="middle">道路行驶能力 →</text>
+<circle cx="294.9" cy="126.0" r="7.0" fill="#123f5c" stroke="#fff" stroke-width="2" opacity="1"/>
+<text x="308.9" y="130.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.3" fill="#12171c" font-weight="700" text-anchor="start">陆地航母 X3-F</text>
+<text x="308.9" y="144.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">≤200 万元 · TC/PC 已受理</text>
+<circle cx="385.5" cy="478.0" r="7.0" fill="#2a6d8c" stroke="#fff" stroke-width="2" opacity="1"/>
+<text x="399.5" y="482.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.3" fill="#12171c" font-weight="700" text-anchor="start">EH216-S</text>
+<text x="399.5" y="496.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">已取 TC/PC/AC · 无人驾驶</text>
+<circle cx="782.1" cy="74.7" r="7.0" fill="#6b7c88" stroke="#fff" stroke-width="2" opacity="1"/>
+<text x="782.1" y="58.7" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.3" fill="#12171c" font-weight="700" text-anchor="middle">Alef Model A</text>
+<text x="782.1" y="72.7" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="middle">陆空两栖概念 · 企业口径</text>
+<circle cx="760.9" cy="488.3" r="7.0" fill="#8b979f" stroke="#fff" stroke-width="2" opacity="1"/>
+<text x="746.9" y="492.3" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.3" fill="#12171c" font-weight="700" text-anchor="end">Joby S4</text>
+<text x="746.9" y="506.3" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="end">FAA 审定路径</text>
+<circle cx="759.5" cy="438.4" r="7.0" fill="#8b979f" stroke="#fff" stroke-width="2" opacity="1"/>
+<text x="759.5" y="404.4" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.3" fill="#12171c" font-weight="700" text-anchor="middle">Archer Midnight</text>
+<text x="759.5" y="418.4" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="middle">FAA 审定路径</text>
+<circle cx="825.6" cy="488.3" r="7.0" fill="#9aa7b1" stroke="#fff" stroke-width="2" opacity="1"/>
+<text x="837.6" y="492.3" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.3" fill="#12171c" font-weight="700" text-anchor="start">沃飞长空 AE200</text>
+<text x="837.6" y="506.3" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">eVTOL 航线</text>
+<rect x="152.0" y="270.0" width="316.0" height="62.0" rx="8" fill="#fffdf6" stroke="#eddfc2" stroke-width="1" opacity="1"/>
+<text x="166.0" y="292.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.8" fill="#a9701f" font-weight="700" text-anchor="start">竞争空白：能开、能装、能飞，但飞不远</text>
+<text x="166.0" y="312.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10" fill="#2b343d" font-weight="400" text-anchor="start">X3-F 用道路合法性与收纳性换取航程与速度。</text>
+</svg>

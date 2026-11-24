@@ -1,0 +1,204 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>把飞机装进后备舱 · 小鹏汇天「陆地航母」调研与安全分析 | 飞行汽车技术基础 2026</title>
+<meta name="description" content="飞行汽车技术基础课程两次作业：小鹏汇天分体式飞行汽车「陆地航母」（X3-F 飞行体）的全方位调研、技术/场景/市场可行性分析与系统安全分析。">
+<meta name="author" content="吉林大学 · 飞行汽车技术基础课程作业">
+<meta property="og:title" content="把飞机装进后备舱 · 小鹏汇天「陆地航母」调研与安全分析">
+<meta property="og:description" content="以审定文件为一手证据，拆解分体式飞行汽车的技术可行性、场景边界、市场结构与安全论证。"">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22%3E%3Crect width=%2232%22 height=%2232%22 rx=%228%22 fill=%22%23123f5c%22/%3E%3Ctext x=%2216%22 y=%2222%22 font-size=%2216%22 fill=%22%23fff%22 text-anchor=%22middle%22 font-family=%22serif%22%3E%E9%A3%9E%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="site-header">
+  <div class="bar">
+    <a class="brand" href="index.html">
+      <span class="mark" aria-hidden="true">飞</span>
+      <span>
+        <b>飞行汽车技术基础 · 课程作业</b>
+        <small>Fundamentals of Flying Vehicle Technology · 2026</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="主导航">
+      <a href="index.html" aria-current="page">首页</a>
+      <a href="assignment-1.html">作业一 · 调研与分析</a>
+      <a href="assignment-2.html">作业二 · 安全分析</a>
+      <span class="sep" aria-hidden="true"></span>
+      <a href="references.html">参考文献</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <section class="hero">
+      <div class="eyebrow">
+        <span class="dot"></span><span>课程作业 · 作品集</span>
+        <span>Case: XPENG AeroHT Land Aircraft Carrier</span>
+      </div>
+      <h1>把飞机装进<br><em>汽车后备舱</em></h1>
+      <p class="subtitle">
+        研究对象：小鹏汇天「陆地航母」分体式飞行汽车——陆行体（3 轴 6 轮增程平台）+ 飞行体 X3-F（六旋翼、可折叠、880 kg）。
+        两次作业共用同一对象：第一次回答“它能不能成立”，第二次回答“它凭什么安全”。
+      </p>
+      <div class="hero-meta">
+        <span><b>证据截止</b> 2026-11-23</span>
+        <span><b>一手证据</b> 民航局 X3-F 专用条件（征求意见稿）</span>
+        <span><b>方法</b> 课程第四、五章 · 证据分级 + 安全系统工程九步</span>
+      </div>
+    </section>
+
+    <div class="kpis" role="list" aria-label="关键参数">
+      <div class="kpi" role="listitem"><div class="v">880<small>kg</small></div><div class="k">最大起飞重量（审定口径）</div></div>
+      <div class="kpi" role="listitem"><div class="v">20<small>km</small></div><div class="k">最大航程，约为课程实用化门槛的 1/5</div></div>
+      <div class="kpi" role="listitem"><div class="v">20<small>min</small></div><div class="k">最大航时，单次体验的物理上限</div></div>
+      <div class="kpi" role="listitem"><div class="v">72<small>km/h</small></div><div class="k">不可超越速度 VNE</div></div>
+      <div class="kpi" role="listitem"><div class="v">120<small>m</small></div><div class="k">最大飞行高度（AGL）</div></div>
+      <div class="kpi" role="listitem"><div class="v">≤200<small>万元</small></div><div class="k">预售价格上限（企业口径）</div></div>
+    </div>
+
+    <h2 id="thesis"><span class="num">00</span>一句话结论<span class="en">Thesis</span></h2>
+    <p class="lead">
+      陆地航母不是“能飞的汽车”，而是一套<strong>把航空器折叠进汽车、再把汽车变成移动机库与充电站</strong>的产品系统。它用
+      <span class="hl">20 km / 20 min / 120 m</span> 的极小运行包线，换来了道路合法性、收纳性、可量产性与可负担的适航路径；
+      代价是它无法承担“交通”职能，只能承担“体验”职能。因此它的市场不是城市空中出行，而是<strong>低空文旅与营地网络</strong>；
+      它的安全论证也不能照搬运输类航空器的 10⁻⁹，而应围绕“单点失效不导致灾难性后果 + 运行限制兜底”重建。
+    </p>
+
+    <div class="cards">
+      <article class="card">
+        <div class="meta">Assignment 01</div>
+        <h3>全方位调研与分析</h3>
+        <p>从审定文件出发重建产品定义，逐层评估技术可行性、应用场景与市场可行性；用能量估算、门槛对比、场景矩阵、敏感性模型与竞品定位，给出可审计的判断。</p>
+        <ul class="clean" style="font-size:.86rem;color:var(--ink-2);margin:.2rem 0 .4rem">
+          <li>技术：载荷够、航程不够，短板不在“能不能飞”</li>
+          <li>场景：营地即目的地，通勤不成立</li>
+          <li>市场：7000 台订单是需求信号，不是收入</li>
+        </ul>
+        <a class="stretch" href="assignment-1.html" aria-label="阅读作业一：全方位调研与分析"></a>
+        <span class="go">阅读作业一 →</span>
+      </article>
+
+      <article class="card">
+        <div class="meta">Assignment 02</div>
+        <h3>全方位安全分析</h3>
+        <p>按课程“智能运载工具安全系统工程”九步流程（0–8），从审定基础、功能与场景、架构、软硬件到运行论证，完成 FHA、FTA、STPA、风险矩阵与 GSN 安全案例。</p>
+        <ul class="clean" style="font-size:.86rem;color:var(--ink-2);margin:.2rem 0 .4rem">
+          <li>顶层目标：丧失“可控应急着陆”才是灾难</li>
+          <li>单点失效：飞控与电池是两条不能赌的路径</li>
+          <li>分体式特有风险：分离、对接、运输、地库充电</li>
+        </ul>
+        <a class="stretch" href="assignment-2.html" aria-label="阅读作业二：全方位安全分析"></a>
+        <span class="go">阅读作业二 →</span>
+      </article>
+    </div>
+
+    <h2 id="object"><span class="num">01</span>为什么选这个对象<span class="en">Why this case</span></h2>
+    <p>
+      课程给出的参考案例是 Tesla Roadster 的“有限飞行”——它证明了一个判断：<strong>当产品越过“能飞”与“能运输”的分界线时，最值得研究的不是性能，而是证据</strong>。
+      陆地航母提供了一种更完整的对照：它不是演示样机，而是已经走到型号合格证（TC）、生产许可证（PC）受理、量产线下线与海外交付阶段的产品。
+      这让“技术可行性、场景可行性、市场可行性”第一次可以用<em>审定文件、产线节拍、订单与交付</em>三类硬证据来检验，而不是靠发布会口径。
+    </p>
+    <p>
+      更关键的是，它的设计选择极为清晰：<strong>分体式</strong>。飞行体不承担道路功能，陆行体不承担飞行功能，两者用一套自动分合机构耦合。
+      这个选择同时决定了它的技术上限（航程 20 km）、场景边界（营地半径）与安全命题（分离/对接是独有的风险源）。
+      一个对象能同时把三件事讲清楚，才值得写两次作业。
+    </p>
+
+    <h2 id="how"><span class="num">02</span>怎么读这份作业<span class="en">How to read</span></h2>
+    <div class="grid2">
+      <div class="panel">
+        <h4>证据分级：每个数字都能回到来源</h4>
+        <ul>
+          <li><span class="tag a">A 审定/法规</span> 民航局专用条件、CCAR-21-R5、法律条文——最高权重</li>
+          <li><span class="tag b">B 企业披露</span> 官方参数、产线与订单口径——证明“企业声称什么”</li>
+          <li><span class="tag c">C 第三方</span> 媒体、行业报告、供应链公告——用于交叉核验</li>
+          <li><span class="tag d">D 本文估算</span> 能量、市场、失效概率——只给数量级与假设</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h4>方法映射：直接用课件的框架</h4>
+        <ul>
+          <li>第四章：了解 → 入门 → 基础 → 进阶 → 创新 → 应用 的检索阶梯</li>
+          <li>第五章：产业应用 / 技术创新 / 支撑保障 三大支柱</li>
+          <li>第五章：场景双线（专业化刚需、大众化四阶段）与商业模式两阶段</li>
+          <li>第五章：安全系统工程九步（0–8）与 V 模型</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout insight">
+      <div class="ct">写作原则</div>
+      <p>
+        本文不追求“把产品写得更好”，而追求<strong>把不确定性写清楚</strong>：哪些结论有审定文件支撑，哪些只是企业口径，
+        哪些必须等 TC 颁发后才能成立。凡是估算，都给出假设、公式与敏感性；凡是缺口，都明确标注“未公开”，不用愿望填补。
+      </p>
+    </div>
+
+    <h2 id="status"><span class="num">03</span>交付状态与提交信息<span class="en">Submission</span></h2>
+    <div class="tablewrap">
+      <div class="tscroll">
+        <table class="data">
+          <caption>课程要求对照<span>对照两张作业幻灯片逐项自查；仓库与链接需由学生本人账号发布。</span></caption>
+          <thead><tr><th>要求</th><th>本作品对应</th><th>状态</th></tr></thead>
+          <tbody>
+            <tr><td>Web 网页形式</td><td>纯静态站点，无外部依赖，可直接 GitHub Pages 托管</td><td><span class="tag ok">已满足</span></td></tr>
+            <tr><td>入口文件：根目录 index.html</td><td><a href="index.html">index.html</a>（本页）</td><td><span class="tag ok">已满足</span></td></tr>
+            <tr><td>仓库公开（Public）</td><td>需用本人 GitHub 账号创建并推送，步骤见 README</td><td><span class="tag c">待本人操作</span></td></tr>
+            <tr><td>网页链接填入右侧收集表</td><td>发布后把 Pages 地址填入飞书收集表</td><td><span class="tag c">待本人操作</span></td></tr>
+            <tr><td>作业一：技术 / 场景 / 市场可行性</td><td><a href="assignment-1.html">assignment-1.html</a>，含能量估算、门槛对比、场景矩阵、敏感性模型</td><td><span class="tag ok">已完成</span></td></tr>
+            <tr><td>作业二：系统安全深度分析</td><td><a href="assignment-2.html">assignment-2.html</a>，含 FHA / FTA / STPA / GSN 与安全需求</td><td><span class="tag ok">已完成</span></td></tr>
+            <tr><td>截止时间 2026-11-26 18:00</td><td>证据截止 2026-11-23，留出发布与检查时间</td><td><span class="tag b">进行中</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tnote">发布方式：把整个目录推送到公开仓库，Settings → Pages → Deploy from branch（main / root），得到 <span class="mono">https://&lt;用户名&gt;.github.io/&lt;仓库名&gt;/</span>。</div>
+    </div>
+
+    <h2 id="limits"><span class="num">04</span>边界声明<span class="en">Limitations</span></h2>
+    <ul class="clean">
+      <li><strong>非官方研究。</strong>本文是课程作业，不代表小鹏汇天、民航局或任何机构的立场；所有企业参数以公开披露为准。</li>
+      <li><strong>关键架构未公开。</strong>飞控冗余度、电池包数量与拓扑、传感器配置、软件保证等级均未公开，本文只能按“单点失效不得导致灾难性状态”的条款倒推应有架构，并标注为推断。</li>
+      <li><strong>适航状态会变化。</strong>TC/PC 受理不等于取证；截至证据截止日未见 TC 颁发的公开信息，交付与运营均以此为前提。</li>
+      <li><strong>估算不替代试验。</strong>能量、失效概率与市场模型只用于建立数量级判断，不能作为设计、投资或适航结论。</li>
+      <li><strong>AI 使用已披露。</strong>检索、绘图与文字整理使用了 AI 工具，使用范围与人工核验方式见 <a href="references.html#ai">参考文献页 · AI 使用记录</a>。</li>
+    </ul>
+
+    <div class="nextprev">
+      <div class="np">
+        <span>下一章</span>
+        <a href="assignment-1.html">作业一 · 针对「陆地航母」的全方位调研与分析 →</a>
+      </div>
+      <div class="np next">
+        <span>直接跳转</span>
+        <a href="assignment-2.html">作业二 · 全方位安全分析 →</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div>
+      <strong>飞行汽车技术基础 · 2026</strong><br>
+      课程作业：飞行汽车某技术/产品的全方位调研与安全分析
+    </div>
+    <div>
+      证据截止 2026-11-23 · 静态站点，无外部依赖<br>
+      <a href="references.html">参考文献与 AI 使用记录</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/js/site.js" defer></script>
+</body>
+</html>
+

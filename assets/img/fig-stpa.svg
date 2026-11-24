@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 640" width="100%" role="img" aria-label="STPA 控制结构：控制器、控制动作与反馈">
+<title>STPA 控制结构：控制器、控制动作与反馈</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6d7a"/></marker><marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a9701f"/></marker></defs>
+<rect width="1040" height="640" fill="#fbfaf6"/>
+<rect x="24.0" y="26.0" width="992.0" height="74.0" rx="10" fill="#f6f1e6" stroke="#e6dcc6" stroke-width="1" opacity="1"/>
+<text x="44.0" y="52.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="start">系统边界：一次完整飞行任务（运输—分离—起飞—20 min 飞行—着陆—收纳）</text>
+<text x="44.0" y="74.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.4" fill="#5f6d7a" font-weight="400" text-anchor="start">环境扰动：阵风、地面效应、降水/能见度、电磁干扰、地面人员与障碍物、空域其他用户</text>
+<rect x="60.0" y="140.0" width="210.0" height="96.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="165.0" y="166.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">驾驶员</text>
+<text x="165.0" y="186.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">单杆操纵 · 目视飞行</text>
+<text x="165.0" y="201.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">培训与资质是安全前提</text>
+<rect x="350.0" y="140.0" width="220.0" height="96.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="460.0" y="166.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">飞控计算机 FCC</text>
+<text x="460.0" y="186.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">指令解算 · 保护功能</text>
+<text x="460.0" y="201.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">自检与监控</text>
+<rect x="660.0" y="120.0" width="150.0" height="60.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="735.0" y="146.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">电调 ×6</text>
+<text x="735.0" y="166.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">转速闭环</text>
+<rect x="660.0" y="200.0" width="150.0" height="60.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="735.0" y="226.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">电涵道</text>
+<text x="735.0" y="246.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">偏航力矩</text>
+<rect x="660.0" y="300.0" width="150.0" height="60.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="735.0" y="326.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">BMS</text>
+<text x="735.0" y="346.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">电量/温度/绝缘</text>
+<rect x="60.0" y="300.0" width="210.0" height="80.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="165.0" y="326.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">分合机构控制器</text>
+<text x="165.0" y="346.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">分离/对接状态机</text>
+<rect x="350.0" y="300.0" width="220.0" height="90.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="460.0" y="326.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">航空器（被控过程）</text>
+<text x="460.0" y="346.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">姿态 · 高度 · 位置 · 能量</text>
+<path d="M 270 180 L 344 180" fill="none" stroke="#2a6d8c" stroke-width="1.6" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="307.0" y="172.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#123f5c" font-weight="600" text-anchor="middle">杆量/模式</text>
+<path d="M 570 168 L 654 150" fill="none" stroke="#2a6d8c" stroke-width="1.6" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="612.0" y="150.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#123f5c" font-weight="600" text-anchor="middle">转速指令</text>
+<path d="M 570 190 L 654 224" fill="none" stroke="#2a6d8c" stroke-width="1.6" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="612.0" y="220.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#123f5c" font-weight="600" text-anchor="middle">偏航指令</text>
+<path d="M 570 210 L 654 322" fill="none" stroke="#2a6d8c" stroke-width="1.6" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="600.0" y="280.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#123f5c" font-weight="600" text-anchor="middle">接触器/限流</text>
+<path d="M 270 330 L 344 330" fill="none" stroke="#2a6d8c" stroke-width="1.6" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="307.0" y="322.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#123f5c" font-weight="600" text-anchor="middle">分离/对接</text>
+<path d="M 344 200 L 276 200" fill="none" stroke="#5f6d7a" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="310.0" y="214.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="middle">姿态/告警</text>
+<path d="M 650 176 L 576 180" fill="none" stroke="#5f6d7a" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="612.0" y="194.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="middle">转速反馈</text>
+<path d="M 650 232 L 576 200" fill="none" stroke="#5f6d7a" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 650 320 L 460 392" fill="none" stroke="#5f6d7a" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="556.0" y="372.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="middle">电量/温度</text>
+<path d="M 344 372 L 276 372" fill="none" stroke="#5f6d7a" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="310.0" y="390.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="middle">锁定/到位</text>
+<path d="M 160 236 L 160 292" fill="none" stroke="#5f6d7a" stroke-width="1.2" stroke-dasharray="4 3" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="170.0" y="268.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">目视/外部线索</text>
+<rect x="560.0" y="440.0" width="456.0" height="168.0" rx="10" fill="#fbfdff" stroke="#d3e0e9" stroke-width="1" opacity="1"/>
+<text x="578.0" y="466.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#123f5c" font-weight="700" text-anchor="start">STPA 关注的四类不安全控制动作（UCA）</text>
+<circle cx="586.0" cy="490.0" r="2.6" fill="#123f5c" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="598.0" y="494.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">未提供：该给转速/偏航时未给（如失速前未加推力）</text>
+<circle cx="586.0" cy="516.0" r="2.6" fill="#123f5c" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="598.0" y="520.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">提供不当：给错量或错时序（如着陆前收油门过早）</text>
+<circle cx="586.0" cy="542.0" r="2.6" fill="#123f5c" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="598.0" y="546.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">过早/过晚：超出时序窗口（如未达安全高度即分离）</text>
+<circle cx="586.0" cy="568.0" r="2.6" fill="#123f5c" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="598.0" y="572.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">停止过快/过久：中断必要控制（如保护功能被误关闭）</text>
+<rect x="24.0" y="440.0" width="516.0" height="168.0" rx="10" fill="#fffdf6" stroke="#eddfc2" stroke-width="1" opacity="1"/>
+<text x="42.0" y="466.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#a9701f" font-weight="700" text-anchor="start">为什么 STPA 必要？</text>
+<text x="42.0" y="490.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">FTA 擅长“部件失效”，但 X3-F 的主要风险还来自：</text>
+<text x="42.0" y="512.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">① 组件交互（飞控与电调、电涵道与主旋翼）</text>
+<text x="42.0" y="534.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">② 人机协同（单杆操纵、模式切换、目视判断）</text>
+<text x="42.0" y="556.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#2b343d" font-weight="400" text-anchor="start">③ 运行限制的越界（风速、能见度、营地净空）</text>
+<text x="42.0" y="578.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.2" fill="#a9701f" font-weight="600" text-anchor="start">这些不是“坏了一个零件”，而是控制回路设计问题。</text>
+</svg>

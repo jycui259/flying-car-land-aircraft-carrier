@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="100%" role="img" aria-label="风险矩阵：主要危害的严重度与可能性">
+<title>风险矩阵：主要危害的严重度与可能性</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6d7a"/></marker><marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a9701f"/></marker></defs>
+<rect width="1000" height="640" fill="#fbfaf6"/>
+<text x="24.0" y="34.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#a9701f" font-weight="700" text-anchor="start" letter-spacing="1.2">风险矩阵 / RISK MATRIX</text>
+<text x="24.0" y="54.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10" fill="#5f6d7a" font-weight="400" text-anchor="start">位置为本文定性判断；H1–H4 属“单点失效即灾难”路径，应由架构消除，而不是靠运行限制兜底。</text>
+<rect x="178.0" y="104.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="274.0" y="104.0" width="96.0" height="96.0" rx="0" fill="#fbf7e8" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="370.0" y="104.0" width="96.0" height="96.0" rx="0" fill="#fdf0e6" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="466.0" y="104.0" width="96.0" height="96.0" rx="0" fill="#f4d9d0" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="562.0" y="104.0" width="96.0" height="96.0" rx="0" fill="#f4d9d0" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="178.0" y="200.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="274.0" y="200.0" width="96.0" height="96.0" rx="0" fill="#fbf7e8" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="370.0" y="200.0" width="96.0" height="96.0" rx="0" fill="#fdf0e6" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="466.0" y="200.0" width="96.0" height="96.0" rx="0" fill="#f4d9d0" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="562.0" y="200.0" width="96.0" height="96.0" rx="0" fill="#f4d9d0" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="178.0" y="296.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="274.0" y="296.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="370.0" y="296.0" width="96.0" height="96.0" rx="0" fill="#fbf7e8" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="466.0" y="296.0" width="96.0" height="96.0" rx="0" fill="#fdf0e6" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="562.0" y="296.0" width="96.0" height="96.0" rx="0" fill="#fdf0e6" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="178.0" y="392.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="274.0" y="392.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="370.0" y="392.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="466.0" y="392.0" width="96.0" height="96.0" rx="0" fill="#fbf7e8" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="562.0" y="392.0" width="96.0" height="96.0" rx="0" fill="#fbf7e8" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="178.0" y="488.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="274.0" y="488.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="370.0" y="488.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="466.0" y="488.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<rect x="562.0" y="488.0" width="96.0" height="96.0" rx="0" fill="#eef6f1" stroke="#ffffff" stroke-width="1" opacity="1"/>
+<text x="162.0" y="157.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#2b343d" font-weight="700" text-anchor="end">灾难性</text>
+<text x="162.0" y="253.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#2b343d" font-weight="700" text-anchor="end">危险</text>
+<text x="162.0" y="349.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#2b343d" font-weight="700" text-anchor="end">较大</text>
+<text x="162.0" y="445.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#2b343d" font-weight="700" text-anchor="end">轻微</text>
+<text x="162.0" y="541.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#2b343d" font-weight="700" text-anchor="end">可忽略</text>
+<text transform="translate(246.0,94) rotate(-22)" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" text-anchor="start">极不可能</text>
+<text transform="translate(342.0,94) rotate(-22)" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" text-anchor="start">很少</text>
+<text transform="translate(438.0,94) rotate(-22)" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" text-anchor="start">偶尔</text>
+<text transform="translate(534.0,94) rotate(-22)" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" text-anchor="start">可能</text>
+<text transform="translate(630.0,94) rotate(-22)" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" text-anchor="start">频繁</text>
+<text x="178.0" y="628.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#5f6d7a" font-weight="600" text-anchor="start">可能性（每飞行小时 / 每架次）→</text>
+<text transform="translate(60,344.0) rotate(-90)" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#5f6d7a" font-weight="600" text-anchor="middle">严重度 →</text>
+<circle cx="322.0" cy="152.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="322.0" y="155.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H1</text>
+<text x="340.0" y="156.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="start">电池热失控</text>
+<circle cx="403.0" cy="139.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="403.0" y="142.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H2</text>
+<text x="421.0" y="135.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="start">同侧双推进失效</text>
+<circle cx="433.0" cy="165.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="433.0" y="168.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H3</text>
+<text x="451.0" y="179.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="start">飞控单点失效</text>
+<circle cx="514.0" cy="152.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="514.0" y="155.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H4</text>
+<text x="496.0" y="156.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="end">折叠锁定空中解锁</text>
+<circle cx="610.0" cy="152.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="610.0" y="155.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H6</text>
+<text x="610.0" y="132.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="middle">飞行员定向障碍</text>
+<circle cx="322.0" cy="248.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="322.0" y="251.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H5</text>
+<text x="304.0" y="252.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="end">分合机构误动作</text>
+<circle cx="418.0" cy="248.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="418.0" y="251.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H10</text>
+<text x="436.0" y="252.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="start">坠撞后起火</text>
+<circle cx="418.0" cy="344.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="418.0" y="347.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H9</text>
+<text x="400.0" y="348.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="end">充电 / 储运火灾</text>
+<circle cx="514.0" cy="344.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="514.0" y="347.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H7</text>
+<text x="532.0" y="348.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="start">阵风 / 下洗超限</text>
+<circle cx="514.0" cy="440.0" r="14.0" fill="#ffffff" stroke="#9c3d1d" stroke-width="1.5" opacity="1"/>
+<text x="514.0" y="443.6" font-family="Consolas,'Cascadia Mono',monospace" font-size="8.8" fill="#9c3d1d" font-weight="700" text-anchor="middle">H8</text>
+<text x="532.0" y="444.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="600" text-anchor="start">地面人员进入旋翼区</text>
+<text x="698.0" y="116.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#123f5c" font-weight="700" text-anchor="start">处置原则</text>
+<rect x="698.0" y="132.0" width="10.0" height="10.0" rx="2" fill="#c4634a" stroke="#c4634a" stroke-width="1" opacity="1"/>
+<text x="716.0" y="141.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">红色：不可接受，必须改设</text>
+<text x="716.0" y="154.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">计</text>
+<rect x="698.0" y="166.0" width="10.0" height="10.0" rx="2" fill="#d99a5b" stroke="#d99a5b" stroke-width="1" opacity="1"/>
+<text x="716.0" y="175.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">橙色：ALARP，需证明已降</text>
+<text x="716.0" y="188.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">至最低</text>
+<rect x="698.0" y="200.0" width="10.0" height="10.0" rx="2" fill="#d9c07a" stroke="#d9c07a" stroke-width="1" opacity="1"/>
+<text x="716.0" y="209.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">黄色：运行程序与培训控制</text>
+<rect x="698.0" y="234.0" width="10.0" height="10.0" rx="2" fill="#8fb9a2" stroke="#8fb9a2" stroke-width="1" opacity="1"/>
+<text x="716.0" y="243.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">绿色：可接受，保持监控</text>
+<text x="698.0" y="294.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="start">注：本图不对应</text>
+<text x="698.0" y="308.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="start">任何官方风险接受</text>
+<text x="698.0" y="322.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="start">准则。</text>
+</svg>

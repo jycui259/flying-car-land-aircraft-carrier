@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 700" width="100%" role="img" aria-label="X3-F 安全架构分层：能量、控制、乘员与运行">
+<title>X3-F 安全架构分层：能量、控制、乘员与运行</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6d7a"/></marker><marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a9701f"/></marker></defs>
+<rect width="1060" height="700" fill="#fbfaf6"/>
+<rect x="24.0" y="56.0" width="1012.0" height="96.0" rx="10" fill="#f6f1e6" stroke="#e6dcc6" stroke-width="1" opacity="1"/>
+<text x="40.0" y="48.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" font-weight="700" text-anchor="start" letter-spacing="1.2">L4 运行与人员</text>
+<rect x="24.0" y="176.0" width="1012.0" height="132.0" rx="10" fill="#fbf7ee" stroke="#e8dcc2" stroke-width="1" opacity="1"/>
+<text x="40.0" y="198.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" font-weight="700" text-anchor="start" letter-spacing="1.2">L3 乘员与结构</text>
+<rect x="24.0" y="332.0" width="1012.0" height="150.0" rx="10" fill="#eef3f7" stroke="#d3e0e9" stroke-width="1" opacity="1"/>
+<text x="40.0" y="354.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" font-weight="700" text-anchor="start" letter-spacing="1.2">L2 控制与感知</text>
+<rect x="24.0" y="506.0" width="1012.0" height="150.0" rx="10" fill="#f3f7f4" stroke="#cfe0d6" stroke-width="1" opacity="1"/>
+<text x="40.0" y="528.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#5f6d7a" font-weight="700" text-anchor="start" letter-spacing="1.2">L1 能量与推进</text>
+<rect x="44.0" y="542.0" width="190.0" height="96.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="139.0" y="566.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">动力电池包</text>
+<text x="139.0" y="584.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">高硅高镍 · 25C 峰值</text>
+<text x="139.0" y="600.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">BMS：过温/过流/绝缘</text>
+<text x="139.0" y="620.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#9c3d1d" font-weight="600" text-anchor="middle">单点失效不得灾难性</text>
+<rect x="262.0" y="542.0" width="190.0" height="96.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="357.0" y="566.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">高压配电</text>
+<text x="357.0" y="584.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">接触器 · 熔断 · 预充</text>
+<text x="357.0" y="600.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">手动隔离开关</text>
+<text x="357.0" y="620.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#9c3d1d" font-weight="600" text-anchor="middle">不依赖软件动作</text>
+<rect x="480.0" y="536.0" width="350.0" height="108.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="655.0" y="558.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">六路电推进单元</text>
+<rect x="500.0" y="570.0" width="96.0" height="26.0" rx="5" fill="#eef3f7" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="548.0" y="587.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="8.8" fill="#2b343d" font-weight="400" text-anchor="middle">M1 + ESC + 定距桨</text>
+<rect x="608.0" y="570.0" width="96.0" height="26.0" rx="5" fill="#eef3f7" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="656.0" y="587.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="8.8" fill="#2b343d" font-weight="400" text-anchor="middle">M2 + ESC + 定距桨</text>
+<rect x="716.0" y="570.0" width="96.0" height="26.0" rx="5" fill="#eef3f7" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="764.0" y="587.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="8.8" fill="#2b343d" font-weight="400" text-anchor="middle">M3 + ESC + 定距桨</text>
+<rect x="500.0" y="604.0" width="96.0" height="26.0" rx="5" fill="#eef3f7" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="548.0" y="621.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="8.8" fill="#2b343d" font-weight="400" text-anchor="middle">M4 + ESC + 定距桨</text>
+<rect x="608.0" y="604.0" width="96.0" height="26.0" rx="5" fill="#eef3f7" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="656.0" y="621.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="8.8" fill="#2b343d" font-weight="400" text-anchor="middle">M5 + ESC + 定距桨</text>
+<rect x="716.0" y="604.0" width="96.0" height="26.0" rx="5" fill="#eef3f7" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="764.0" y="621.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="8.8" fill="#2b343d" font-weight="400" text-anchor="middle">M6 + ESC + 定距桨</text>
+<text x="655.0" y="638.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#5f6d7a" font-weight="400" text-anchor="middle">差动转速 → 姿态控制；单发失效后由电涵道补偏航</text>
+<rect x="858.0" y="542.0" width="158.0" height="96.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="937.0" y="566.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">电涵道</text>
+<text x="937.0" y="584.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">偏航力矩备份</text>
+<text x="937.0" y="600.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">叶片 2× 离心载荷</text>
+<text x="937.0" y="620.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#123f5c" font-weight="600" text-anchor="middle">X3.1433</text>
+<rect x="44.0" y="360.0" width="250.0" height="106.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="169.0" y="384.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">飞控计算机</text>
+<text x="169.0" y="402.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">电传操纵 · 保护功能</text>
+<text x="169.0" y="419.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="400" text-anchor="middle">姿态角 / 偏航率 / 过载 / 速度限制</text>
+<text x="169.0" y="436.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="400" text-anchor="middle">飞行前自检 + 全程监控</text>
+<text x="169.0" y="455.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#9c3d1d" font-weight="600" text-anchor="middle">冗余度未公开 → 按单点失效准则倒推</text>
+<rect x="316.0" y="360.0" width="236.0" height="106.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="434.0" y="384.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">传感器组</text>
+<text x="434.0" y="402.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">IMU · 气压高度 · GNSS · 磁罗盘</text>
+<text x="434.0" y="419.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="400" text-anchor="middle">交叉校验与故障隔离</text>
+<text x="434.0" y="437.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#8b979f" font-weight="400" text-anchor="middle">（配置与数量未公开）</text>
+<rect x="574.0" y="360.0" width="212.0" height="106.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="680.0" y="384.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">分合机构控制</text>
+<text x="680.0" y="402.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">状态机 + 到位检测</text>
+<text x="680.0" y="419.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#9c3d1d" font-weight="600" text-anchor="middle">空中禁止解锁互锁</text>
+<text x="680.0" y="437.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#2b343d" font-weight="400" text-anchor="middle">对接失败 → 禁止起飞</text>
+<rect x="808.0" y="360.0" width="208.0" height="106.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="912.0" y="384.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">告警与人机界面</text>
+<text x="912.0" y="402.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">电量 / 转速 / 模式指示</text>
+<text x="912.0" y="419.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#2b343d" font-weight="400" text-anchor="middle">保护功能门限告警</text>
+<text x="912.0" y="437.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#2b343d" font-weight="400" text-anchor="middle">单杆操纵，手动/自动</text>
+<rect x="44.0" y="200.0" width="232.0" height="108.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="160.0" y="224.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">乘员约束</text>
+<text x="160.0" y="244.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">四点式安全带 + 肩带</text>
+<text x="160.0" y="262.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">座椅按 77 kg 乘员设计</text>
+<text x="160.0" y="282.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#2b343d" font-weight="400" text-anchor="middle">刚性件包裹，防二次碰撞</text>
+<rect x="294.0" y="200.0" width="232.0" height="108.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="410.0" y="224.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">结构吸能</text>
+<text x="410.0" y="244.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#5f6d7a" font-weight="400" text-anchor="middle">四点橇式起落架 + 落震试验</text>
+<text x="410.0" y="262.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">应急着陆惯性载荷</text>
+<text x="410.0" y="282.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#9c3d1d" font-weight="600" text-anchor="middle">“可控应急着陆”是顶层目标</text>
+<rect x="544.0" y="200.0" width="232.0" height="108.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="660.0" y="224.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">折叠与锁定</text>
+<text x="660.0" y="244.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">机臂 / 桨叶 / 起落架折叠</text>
+<text x="660.0" y="262.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.6" fill="#2b343d" font-weight="400" text-anchor="middle">飞行中禁止解锁（X3.612/729）</text>
+<text x="660.0" y="282.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">间隙与干涉检查</text>
+<rect x="794.0" y="200.0" width="222.0" height="108.0" rx="8" fill="#ffffff" stroke="#c3baa7" stroke-width="1" opacity="1"/>
+<text x="905.0" y="224.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="12" fill="#12171c" font-weight="700" text-anchor="middle">应急出口与逃生</text>
+<text x="905.0" y="244.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">舱门/出口尺寸与操作力</text>
+<text x="905.0" y="262.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">落水/起火后撤离</text>
+<text x="905.0" y="282.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.4" fill="#8b979f" font-weight="400" text-anchor="middle">（公开资料有限）</text>
+<rect x="44.0" y="66.0" width="960.0" height="72.0" rx="8" fill="#ffffff" stroke="#e6dcc6" stroke-width="1" opacity="1"/>
+<rect x="60.0" y="87.0" width="90.6" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="105.3" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">昼间目视 VMC</text>
+<rect x="158.6" y="87.0" width="83.2" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="200.2" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">≤120 m AGL</text>
+<rect x="249.8" y="87.0" width="83.4" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="291.5" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">航程 ≤20 km</text>
+<rect x="341.2" y="87.0" width="89.0" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="385.7" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">VNE 72 km/h</text>
+<rect x="438.2" y="87.0" width="74.5" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="475.4" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">营地隔离区</text>
+<rect x="520.7" y="87.0" width="101.3" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="571.3" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">风速/能见度限值</text>
+<rect x="630.0" y="87.0" width="74.5" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="667.2" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">资质与培训</text>
+<rect x="712.5" y="87.0" width="85.0" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="755.0" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">飞行计划报备</text>
+<rect x="805.5" y="87.0" width="95.5" height="30.0" rx="15" fill="#fff" stroke="#e0d3b8" stroke-width="1" opacity="1"/>
+<text x="853.2" y="106.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#2b343d" font-weight="600" text-anchor="middle">维护与持续适航</text>
+<text x="44.0" y="166.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.8" fill="#a9701f" font-weight="600" text-anchor="start">运行包线本身就是安全措施：把“能飞的条件”收窄，比事后增加冗余更有效。</text>
+</svg>

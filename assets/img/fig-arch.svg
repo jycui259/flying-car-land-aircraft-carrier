@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1060 660" width="100%" role="img" aria-label="陆地航母分体式飞行汽车系统架构与外部约束">
+<title>陆地航母分体式飞行汽车系统架构与外部约束</title>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#5f6d7a"/></marker><marker id="arrowA" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#a9701f"/></marker></defs>
+<rect width="1060" height="660" fill="#fbfaf6"/>
+<text x="30.0" y="34.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#a9701f" font-weight="700" text-anchor="start" letter-spacing="1.2">地面平台 / GROUND PLATFORM</text>
+<text x="410.0" y="34.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#a9701f" font-weight="700" text-anchor="start" letter-spacing="1.2">接口 / INTERFACE</text>
+<text x="742.0" y="34.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#a9701f" font-weight="700" text-anchor="start" letter-spacing="1.2">空中平台 / AIR VEHICLE</text>
+<rect x="24.0" y="50.0" width="320.0" height="350.0" rx="10" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="44.0" y="78.0" font-family="'Songti SC','STSong','SimSun',Georgia,serif" font-size="16" fill="#12171c" font-weight="700" text-anchor="start">陆行体（母舰）</text>
+<text x="44.0" y="98.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#5f6d7a" font-weight="400" text-anchor="start">3 轴 6 轮 · 6×6 全驱 · 后轮转向</text>
+<text x="44.0" y="124.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">尺寸</text>
+<text x="86.0" y="124.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">5.5 × 2.0 × 2.0 m；可入地库、停标准车位</text>
+<text x="44.0" y="151.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">动力</text>
+<text x="86.0" y="151.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">800 V SiC 增程；CLTC 续航 &gt; 1 000 km</text>
+<text x="44.0" y="178.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">补能</text>
+<text x="86.0" y="178.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">行车/驻车为飞行体充电，支持 5–6 次飞行</text>
+<text x="44.0" y="205.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">驾驶</text>
+<text x="86.0" y="205.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">C 类驾照；飞行体另需航空器驾驶资质</text>
+<text x="44.0" y="232.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">收纳</text>
+<text x="86.0" y="232.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">飞行体全折叠入后备舱，随车运输</text>
+<text x="44.0" y="259.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">接口</text>
+<text x="86.0" y="259.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">锁止 + 高压/低压充电 + 数据握手</text>
+<line x1="44.0" y1="360.0" x2="324.0" y2="360.0" stroke="#d9d2c4" stroke-width="1"/>
+<text x="44.0" y="376.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">量产：满产 30 min / 台，规划万辆级年产能</text>
+<text x="44.0" y="390.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">2026-03 批量试产下线并完成多机试飞</text>
+<rect x="716.0" y="50.0" width="320.0" height="350.0" rx="10" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="736.0" y="78.0" font-family="'Songti SC','STSong','SimSun',Georgia,serif" font-size="16" fill="#12171c" font-weight="700" text-anchor="start">飞行体 X3-F</text>
+<text x="736.0" y="98.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#5f6d7a" font-weight="400" text-anchor="start">六旋翼 · 双涵道 · 可折叠</text>
+<text x="736.0" y="124.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">构型</text>
+<text x="778.0" y="124.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">6 电机 + 6 定距桨，差动转速控制姿态</text>
+<text x="736.0" y="151.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">偏航</text>
+<text x="778.0" y="151.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">电涵道在单发失效后提供偏航力矩</text>
+<text x="736.0" y="178.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">结构</text>
+<text x="778.0" y="178.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">碳纤维机身与旋翼；机臂、橇架可折叠</text>
+<text x="736.0" y="205.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">收纳</text>
+<text x="778.0" y="205.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">全折叠 2 934 × 1 777 × 1 312 mm</text>
+<text x="736.0" y="232.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">重量</text>
+<text x="778.0" y="232.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">最大起飞重量 880 kg；2 座（1 驾驶员）</text>
+<text x="736.0" y="259.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">包线</text>
+<text x="778.0" y="259.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">20 km / 20 min / VNE 72 km/h / 120 m</text>
+<text x="736.0" y="286.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="10.5" fill="#8b979f" font-weight="700" text-anchor="start" letter-spacing="1">限制</text>
+<text x="778.0" y="286.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">仅昼间目视；私人娱乐与培训，不载客</text>
+<line x1="736.0" y1="360.0" x2="1016.0" y2="360.0" stroke="#d9d2c4" stroke-width="1"/>
+<text x="736.0" y="376.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">审定：LSA 类别 + 专用条件（2025-03 征求意见）</text>
+<text x="736.0" y="390.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.2" fill="#5f6d7a" font-weight="400" text-anchor="start">TC 2024-03 受理 · PC 2025-05 受理</text>
+<rect x="372.0" y="118.0" width="300.0" height="200.0" rx="12" fill="#fffdf6" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="522.0" y="146.0" font-family="'Songti SC','STSong','SimSun',Georgia,serif" font-size="14.5" fill="#12171c" font-weight="700" text-anchor="middle">自动分合机构</text>
+<text x="522.0" y="166.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.5" fill="#a9701f" font-weight="700" text-anchor="middle" letter-spacing="1.4">AUTOMATIC DOCKING</text>
+<circle cx="396.0" cy="190.0" r="2.6" fill="#a9701f" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="408.0" y="194.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">分离 / 结合：约 5 min</text>
+<circle cx="396.0" cy="216.0" r="2.6" fill="#a9701f" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="408.0" y="220.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">四点锁止 + 到位检测</text>
+<circle cx="396.0" cy="242.0" r="2.6" fill="#a9701f" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="408.0" y="246.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">运输中飞行体固定约束</text>
+<circle cx="396.0" cy="268.0" r="2.6" fill="#a9701f" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="408.0" y="272.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">地面充电与数据握手</text>
+<circle cx="396.0" cy="294.0" r="2.6" fill="#a9701f" stroke="#a9701f" stroke-width="1" opacity="1"/>
+<text x="408.0" y="298.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">对接失败 → 禁止起飞互锁</text>
+<path d="M 344 200 L 366 200" fill="none" stroke="#5f6d7a" stroke-width="1.4" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 372 200 L 350 200" fill="none" stroke="#5f6d7a" stroke-width="1.4" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 678 200 L 710 200" fill="none" stroke="#5f6d7a" stroke-width="1.4" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M 716 200 L 684 200" fill="none" stroke="#5f6d7a" stroke-width="1.4" marker-end="url(#arrow)" stroke-linecap="round" stroke-linejoin="round"/>
+<text x="30.0" y="428.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#a9701f" font-weight="700" text-anchor="start" letter-spacing="1.2">支撑体系 / ENABLING SYSTEM</text>
+<rect x="24.0" y="442.0" width="161.7" height="74.0" rx="8" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="104.8" y="468.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="middle">飞行营地</text>
+<text x="104.8" y="486.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">200+ 个营地与起降点</text>
+<rect x="195.7" y="442.0" width="161.7" height="74.0" rx="8" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="276.5" y="468.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="middle">空域与计划</text>
+<text x="276.5" y="486.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">飞行计划、目视航路</text>
+<rect x="367.3" y="442.0" width="161.7" height="74.0" rx="8" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="448.2" y="468.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="middle">培训与执照</text>
+<text x="448.2" y="486.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">飞行培训、资质考取</text>
+<rect x="539.0" y="442.0" width="161.7" height="74.0" rx="8" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="619.8" y="468.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="middle">维保与电池</text>
+<text x="619.8" y="486.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">桨叶/电池/结构检查</text>
+<rect x="710.7" y="442.0" width="161.7" height="74.0" rx="8" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="791.5" y="468.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="middle">补能与储运</text>
+<text x="791.5" y="486.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">随车充电、地库停放</text>
+<rect x="882.3" y="442.0" width="161.7" height="74.0" rx="8" fill="#ffffff" stroke="#d9d2c4" stroke-width="1" opacity="1"/>
+<text x="963.2" y="468.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#12171c" font-weight="700" text-anchor="middle">保险与责任</text>
+<text x="963.2" y="486.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.8" fill="#5f6d7a" font-weight="400" text-anchor="middle">第三方与乘员险</text>
+<rect x="24.0" y="540.0" width="1012.0" height="92.0" rx="10" fill="#e8eef2" stroke="#cfdde5" stroke-width="1" opacity="1"/>
+<text x="44.0" y="566.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11" fill="#123f5c" font-weight="700" text-anchor="start" letter-spacing="1.2">监管与审定 / REGULATORY RAIL</text>
+<text x="44.0" y="588.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">CAAC：专用条件（X3 章）→ 型号合格证 TC（2024-03 受理）→ 生产许可证 PC（2025-05 受理）→ 适航证 AC</text>
+<text x="44.0" y="610.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="11.5" fill="#2b343d" font-weight="400" text-anchor="start">阿联酋：GCAA 监管沙盒 + 拉斯海玛示范区（2026-09 协议）；试运行不等于商业载客许可</text>
+<text x="1024.0" y="610.0" font-family="'Microsoft YaHei','PingFang SC','Hiragino Sans GB','Segoe UI',sans-serif" font-size="9.5" fill="#5f6d7a" font-weight="400" text-anchor="end">证据截止 2026-11-23</text>
+</svg>
